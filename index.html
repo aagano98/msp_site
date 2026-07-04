@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJG Ventures — Managed Private AI Infrastructure</title>
+<meta name="description" content="Private AI without a platform team. Configured deployments on customer-owned certified hardware — governed applications, curated open-weight models, and operations under one SLA. Your data never leaves your perimeter, by architecture.">
+<meta property="og:title" content="AJG Ventures — Managed Private AI Infrastructure">
+<meta property="og:description" content="Private AI without a platform team. Data sovereignty enforced as an architectural property, not a policy promise.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ajgventures.co">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0f14'/%3E%3Cpath d='M9 22 L16 9 L23 22' stroke='%2345d6c4' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='12' y1='17.5' x2='20' y2='17.5' stroke='%2345d6c4' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0b0f14;
+    --bg-raise: #10161d;
+    --bg-card: #0e141b;
+    --ink: #e8eef4;
+    --ink-dim: #9fb0bf;
+    --ink-faint: #6b7c8a;
+    --accent: #45d6c4;
+    --accent-soft: rgba(69, 214, 196, 0.12);
+    --line: rgba(158, 180, 200, 0.14);
+    --line-strong: rgba(158, 180, 200, 0.24);
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  /* background texture */
+  .grid-bg {
+    position: fixed; inset: 0; z-index: -2; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(158,180,200,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(158,180,200,0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 20%, transparent 75%);
+  }
+  .glow {
+    position: fixed; z-index: -1; pointer-events: none;
+    width: 900px; height: 520px; top: -220px; left: 50%; transform: translateX(-50%);
+    background: radial-gradient(ellipse at center, rgba(69,214,196,0.10), transparent 65%);
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+  /* nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    background: rgba(11,15,20,0.78);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+  .wordmark {
+    font-family: var(--mono); font-size: 14px; font-weight: 600;
+    letter-spacing: 0.14em; color: var(--ink); text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .wordmark .tick { color: var(--accent); }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    color: var(--ink-dim); text-decoration: none; font-size: 14.5px;
+    transition: color .15s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    font-family: var(--mono); font-size: 13px !important;
+    color: var(--accent) !important; border: 1px solid rgba(69,214,196,0.35);
+    padding: 7px 14px; border-radius: 6px; transition: background .15s, border-color .15s;
+  }
+  .nav-cta:hover { background: var(--accent-soft); border-color: var(--accent); }
+
+  /* hero */
+  header { padding: 104px 0 84px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 22px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--accent); display: inline-block; }
+  h1 {
+    font-size: clamp(38px, 6vw, 62px); line-height: 1.06; font-weight: 700;
+    letter-spacing: -0.025em; max-width: 780px;
+  }
+  h1 .dim { color: var(--ink-faint); }
+  .hero-sub {
+    margin-top: 26px; font-size: 19px; color: var(--ink-dim); max-width: 640px; line-height: 1.65;
+  }
+  .hero-sub strong { color: var(--ink); font-weight: 600; }
+  .hero-ctas { margin-top: 38px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; text-decoration: none; font-size: 15.5px; font-weight: 600;
+    padding: 13px 26px; border-radius: 8px; transition: transform .15s, background .15s, border-color .15s;
+  }
+  .btn-primary { background: var(--accent); color: #06211d; }
+  .btn-primary:hover { transform: translateY(-1px); background: #5ce4d3; }
+  .btn-ghost { color: var(--ink); border: 1px solid var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--ink-faint); }
+  .hero-chips { margin-top: 54px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .chip {
+    font-family: var(--mono); font-size: 12.5px; color: var(--ink-dim);
+    border: 1px solid var(--line); border-radius: 100px; padding: 7px 15px;
+    background: rgba(16,22,29,0.6);
+  }
+  .chip b { color: var(--accent); font-weight: 500; margin-right: 6px; }
+
+  /* sections */
+  section { padding: 84px 0; border-top: 1px solid var(--line); }
+  .sec-head { margin-bottom: 48px; max-width: 720px; }
+  h2 { font-size: clamp(26px, 3.6vw, 36px); letter-spacing: -0.02em; line-height: 1.15; font-weight: 700; }
+  .sec-head p { margin-top: 16px; color: var(--ink-dim); font-size: 17.5px; }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card {
+    background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 28px 26px; transition: border-color .2s;
+  }
+  .card:hover { border-color: var(--line-strong); }
+  .card .k {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+  }
+  .card h3 { font-size: 18.5px; font-weight: 650; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .card p { font-size: 15px; color: var(--ink-dim); line-height: 1.65; }
+
+  /* differentiation list */
+  .diff { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .diff-item {
+    border: 1px solid var(--line); border-radius: 12px; padding: 26px;
+    background: linear-gradient(180deg, rgba(16,22,29,0.7), rgba(14,20,27,0.4));
+  }
+  .diff-item h3 { font-size: 17.5px; font-weight: 650; margin-bottom: 9px; display: flex; align-items: baseline; gap: 10px; }
+  .diff-item h3::before { content: "▸"; color: var(--accent); font-size: 14px; }
+  .diff-item p { font-size: 15px; color: var(--ink-dim); }
+
+  /* architecture */
+  .arch {
+    border: 1px solid var(--line-strong); border-radius: 14px; overflow: hidden;
+    background: var(--bg-card); max-width: 780px; margin: 0 auto;
+  }
+  .arch-perimeter {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); padding: 14px 24px; border-bottom: 1px dashed rgba(69,214,196,0.4);
+    background: rgba(69,214,196,0.05); display: flex; justify-content: space-between; align-items: center;
+  }
+  .layer {
+    padding: 20px 24px; border-bottom: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .layer:last-child { border-bottom: none; }
+  .layer .l-name { font-weight: 650; font-size: 16px; letter-spacing: -0.01em; }
+  .layer .l-desc { font-size: 13.5px; color: var(--ink-faint); margin-top: 3px; }
+  .layer .l-tag {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    white-space: nowrap; padding: 5px 11px; border-radius: 5px;
+  }
+  .tag-ours { color: var(--accent); background: var(--accent-soft); border: 1px solid rgba(69,214,196,0.3); }
+  .tag-theirs { color: var(--ink-dim); background: rgba(158,180,200,0.07); border: 1px solid var(--line); }
+  .layer-ours { background: rgba(69,214,196,0.04); }
+  .arch-note { text-align: center; margin-top: 18px; font-size: 13.5px; color: var(--ink-faint); font-family: var(--mono); }
+
+  /* why now */
+  .cohorts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .cohort { border-left: 2px solid var(--accent); padding: 6px 0 6px 26px; }
+  .cohort .k { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .cohort h3 { font-size: 20px; margin: 10px 0 10px; letter-spacing: -0.01em; }
+  .cohort p { color: var(--ink-dim); font-size: 15.5px; }
+  .stat-line {
+    margin-top: 52px; border: 1px solid var(--line); border-radius: 12px;
+    padding: 26px 30px; display: flex; gap: 40px; flex-wrap: wrap; align-items: center;
+    background: var(--bg-card);
+  }
+  .stat b { display: block; font-size: 26px; letter-spacing: -0.02em; color: var(--accent); font-weight: 700; }
+  .stat span { font-size: 13.5px; color: var(--ink-faint); }
+
+  /* cta band */
+  .cta-band { text-align: center; padding: 100px 0; }
+  .cta-band h2 { max-width: 640px; margin: 0 auto; }
+  .cta-band p { margin: 18px auto 0; max-width: 560px; color: var(--ink-dim); }
+  .cta-band .hero-ctas { justify-content: center; }
+  .contact-line { margin-top: 26px; font-family: var(--mono); font-size: 14px; color: var(--ink-faint); }
+  .contact-line a { color: var(--accent); text-decoration: none; }
+
+  footer {
+    border-top: 1px solid var(--line); padding: 34px 0; font-size: 13.5px; color: var(--ink-faint);
+  }
+  .foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .foot-inner .wordmark { font-size: 12px; color: var(--ink-dim); }
+
+  /* reveal — fail-open: content is visible by default; JS adds .pre just-in-time,
+     and a safety timeout force-reveals anything the observer misses */
+  .reveal { transition: opacity .6s ease, transform .6s ease; }
+  .reveal.pre { opacity: 0; transform: translateY(14px); }
+
+  @media (max-width: 880px) {
+    .cards, .diff, .cohorts { grid-template-columns: 1fr; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    header { padding: 72px 0 60px; }
+    section { padding: 64px 0; }
+    .layer { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .stat-line { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="glow"></div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="wordmark" href="#"><span class="tick">▲</span>AJG&nbsp;VENTURES</a>
+    <div class="nav-links">
+      <a href="#product">Product</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#why-now">Why now</a>
+      <a class="nav-cta" href="mailto:hello@ajgventures.co">CONTACT</a>
+    </div>
+  </div>
+</nav>
+
+<header class="wrap">
+  <div class="eyebrow">Managed Private AI Infrastructure</div>
+  <h1>Private AI without a platform team.<span class="dim"> Your models, your hardware, your perimeter.</span></h1>
+  <p class="hero-sub">A configured AI deployment that arrives working: certified hardware you own, a library of governed applications, and a control surface your IT leadership operates — <strong>no Kubernetes, no ML team, one SLA.</strong> Prompts, documents, and outputs stay inside your perimeter by architecture, not by policy.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="mailto:hello@ajgventures.co?subject=Private%20AI%20deployment">Talk to us</a>
+    <a class="btn btn-ghost" href="#architecture">How it works</a>
+  </div>
+  <div class="hero-chips">
+    <span class="chip"><b>01</b>Data sovereignty by design</span>
+    <span class="chip"><b>02</b>Zero Kubernetes exposure</span>
+    <span class="chip"><b>03</b>Fault-proven governance</span>
+    <span class="chip"><b>04</b>Operated under one SLA</span>
+  </div>
+</header>
+
+<section id="product">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>A deployment, not a platform project.</h2>
+      <p>The certified stack for private AI already exists. What's missing is a version a company without an ML team can buy, govern, and operate. That's the product.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="k">Applications</div>
+        <h3>The apps employees actually use</h3>
+        <p>Enterprise chat and content creation, retrieval over your own corpus, and a private coding assistant in every developer's IDE — governed, private, and working on day one. Additional applications select from a growing catalog.</p>
+      </div>
+      <div class="card reveal">
+        <div class="k">Models</div>
+        <h3>A curated menu, kept current</h3>
+        <p>The strongest open-weight models, each selected for a defined job, right-sized for your hardware, and assigned per application. Upgrades ship through the managed pipeline as the frontier moves. Bring-your-own-key covers frontier APIs when a workload justifies them.</p>
+      </div>
+      <div class="card reveal">
+        <div class="k">Governance</div>
+        <h3>A control surface for IT leadership</h3>
+        <p>Model-per-app assignment, access and quotas, network posture, and audit — every action is a configuration change, never a console command. The operational machinery stays on our side, so you never have to learn it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sovereignty">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Sovereignty as an architectural property.</h2>
+      <p>Most vendors promise your data is safe by contract. We built a system that can't reach it in the first place — and prove it with injected faults, not assurances.</p>
+    </div>
+    <div class="diff">
+      <div class="diff-item reveal">
+        <h3>Configuration is the only control path</h3>
+        <p>Every deployment converges to a versioned, declarative config held in your perimeter — validated, signed, and reconciled by a proven GitOps engine. Drift is detected and reverted. The audit trail is the change history itself.</p>
+      </div>
+      <div class="diff-item reveal">
+        <h3>Structural data-plane separation</h3>
+        <p>We operate the control plane and are architecturally unable to read the data plane. Telemetry carries control-plane fields only — a constraint that contractually binds our subcontractors too. "We run the plumbing, we never see your data" is a verifiable system property.</p>
+      </div>
+      <div class="diff-item reveal">
+        <h3>An egress ladder, not a blunt air gap</h3>
+        <p>Isolation posture is configurable: full air gap, governed egress — user-invoked web search, docs lookup, whitelisted APIs, all logged — or fully connected. Destination control with an audit trail beats a checkbox.</p>
+      </div>
+      <div class="diff-item reveal">
+        <h3>Fault-proven enforcement</h3>
+        <p>Every governance control — access, quota, egress, resilience — is validated by an injected-fault test suite and shown to fail visibly and recover cleanly. Enforcement is demonstrated, not asserted, and re-proven on every substrate change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Built on the certified stack. We add the layer it's missing.</h2>
+      <p>Model serving and scheduling run on NVIDIA AI Enterprise behind a clean interface — defect liability stays with the vendor, certification ports across hardware lines, and our engineering concentrates on the governance and experience layer the raw stack doesn't provide.</p>
+    </div>
+    <div class="arch reveal">
+      <div class="arch-perimeter"><span>Your perimeter</span><span>nothing inside leaves</span></div>
+      <div class="layer">
+        <div><div class="l-name">Governed applications</div><div class="l-desc">Enterprise chat · retrieval over your corpus · IDE coding endpoint</div></div>
+        <span class="l-tag tag-ours">We deliver</span>
+      </div>
+      <div class="layer layer-ours">
+        <div><div class="l-name">Governance &amp; experience layer</div><div class="l-desc">Config-driven control · access &amp; quotas · egress posture · audit · admin console</div></div>
+        <span class="l-tag tag-ours">We build &amp; operate</span>
+      </div>
+      <div class="layer">
+        <div><div class="l-name">NVIDIA AI Enterprise</div><div class="l-desc">NIM model serving · Run:ai scheduling &amp; orchestration</div></div>
+        <span class="l-tag tag-theirs">Certified stack</span>
+      </div>
+      <div class="layer">
+        <div><div class="l-name">Certified enterprise hardware</div><div class="l-desc">Dell · HPE · Lenovo AI factory lines — owned by you, on your balance sheet</div></div>
+        <span class="l-tag tag-theirs">Yours</span>
+      </div>
+    </div>
+    <div class="arch-note">single SLA · single point of accountability · substrate work delivered by the hardware vendor as our subcontractor</div>
+  </div>
+</section>
+
+<section id="why-now">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Owning AI infrastructure is becoming the rational choice.</h2>
+    </div>
+    <div class="cohorts">
+      <div class="cohort reveal">
+        <div class="k">Buying now</div>
+        <h3>Compliance-driven organizations</h3>
+        <p>Regional banks, healthcare groups, law firms, state and local government — contractually barred from shared cloud, and unable to operate this stack at any price. For this buyer, the product is the difference between having private AI capability and having none.</p>
+      </div>
+      <div class="cohort reveal">
+        <div class="k">The expansion wave</div>
+        <h3>Cost-driven mainstream</h3>
+        <p>Open-weight models keep closing the quality gap while agentic workloads run at high, sustained duty cycles. Per-token API spend scales linearly forever; owned hardware amortizes. Past the crossover, ownership wins and never reverses.</p>
+      </div>
+    </div>
+    <div class="stat-line reveal">
+      <div class="stat"><b>~15–20%</b><span>utilization where ownership beats dedicated compliant cloud</span></div>
+      <div class="stat"><b>0</b><span>ML engineers required to govern and operate it</span></div>
+      <div class="stat"><b>1</b><span>SLA — one accountable party, hardware to application</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap reveal">
+    <div class="eyebrow" style="justify-content:center;">Early access</div>
+    <h2>Selecting early deployment partners in regulated industries.</h2>
+    <p>The core engine, config schema, and governance topology are built and fault-proven. We're now working with a small number of design partners ahead of certified-stack validation.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="mailto:hello@ajgventures.co?subject=Design%20partner%20conversation">Start a conversation</a>
+    </div>
+    <div class="contact-line"><a href="mailto:hello@ajgventures.co">hello@ajgventures.co</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span class="wordmark"><span class="tick">▲</span>AJG&nbsp;VENTURES</span>
+    <span>AJG Ventures LLC · Georgia, USA · © <span id="yr">2026</span></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  (() => {
+    if (!('IntersectionObserver' in window)) return; // no JS animation support -> everything stays visible
+    const els = [...document.querySelectorAll('.reveal')];
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) return; // already on screen -> never hide it
+      el.classList.add('pre');
+      io.observe(el);
+    });
+    // safety net: nothing stays hidden past 2s, whatever the observer does
+    setTimeout(() => els.forEach(el => el.classList.remove('pre')), 2000);
+  })();
+</script>
+</body>
+</html>
