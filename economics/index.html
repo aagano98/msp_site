@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Economics — Where should each workload run? | Freehold</title>
+<meta name="description" content="Frontier APIs, open-weight APIs, or your own hardware: each is cheapest for a different demand shape. Freehold meters your real usage and recommends the posture your numbers support. Our fee is the same in every posture, so the advice has no thumb on the scale.">
+<meta property="og:title" content="Freehold Economics — Where should each workload run?">
+<meta property="og:description" content="Each posture is cheapest for a different demand shape. Your metered usage decides; our fee is posture-neutral, so the advice has no thumb on the scale.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeholdtech.ai/economics/">
+<link rel="canonical" href="https://freeholdtech.ai/economics/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232e6be6'/%3E%3Ctext x='16' y='22.5' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="/"><span class="brand-tile">F</span>Freehold</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="#101828" stroke-width="1.8" stroke-linecap="round"/></svg></label>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li class="has-sub">
+          <a href="/platform/">Product</a>
+          <ul class="submenu">
+            <li><a href="/platform/">Platform<span class="sub-d">A deployment that arrives working</span></a></li>
+            <li><a href="/applications/">Applications<span class="sub-d">The catalog your employees open</span></a></li>
+            <li><a href="/governance/">Governance &amp; console<span class="sub-d">Built for IT generalists</span></a></li>
+            <li><a href="/deployment/">Deployment postures<span class="sub-d">On-prem, your cloud, governed API</span></a></li>
+            <li><a href="/security/">Security &amp; sovereignty<span class="sub-d">Your data stays yours, by architecture</span></a></li>
+          </ul>
+        </li>
+        <li><a href="/solutions/">Solutions</a></li>
+        <li><a href="/economics/" aria-current="page">Economics</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/company/">Company</a></li>
+        <li><a class="nav-cta" href="mailto:hello@freeholdtech.ai?subject=Freehold%20deployment">Talk to us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> / Economics</div>
+    <div class="eyebrow">Economics</div>
+    <h1>You already pay an AI bill. The real question is where each workload should run.</h1>
+    <p class="hero-sub">Frontier seats, direct API spend, or both: every buyer arrives with a bill. Whether AI is worth buying is a question you've already answered. What our product puts in front of you instead: given what each source costs and what constraints each workload carries, <strong>where should it run?</strong></p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Workload%20economics">Walk through your bill</a>
+      <a class="btn btn-ghost" href="/deployment/">The three postures</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Three sources. Three cost shapes.</h2>
+      <p>Any workload can be served from three places, and they price in different units:</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="k">Frontier APIs</div>
+        <h3>Top capability, top price</h3>
+        <p>The frontier closed models have no open-weight substitute at the top end, and their list prices reflect it. Some work genuinely needs them; most everyday seat work doesn't.</p>
+      </div>
+      <div class="card reveal">
+        <div class="k">Open-weight APIs</div>
+        <h3>The immediate price gap</h3>
+        <p>The tier of open-weight models that handles the bulk of everyday work sells an order of magnitude or more below frontier list. That gap is capturable today, through a governed gateway, with no hardware.</p>
+      </div>
+      <div class="card reveal">
+        <div class="k">Your hardware</div>
+        <h3>Priced per GPU-hour, not per token</h3>
+        <p>Owned or VPC capacity is a fixed cost that amortizes. Whether it beats the APIs depends on one variable more than any other: how much of the time the machine is actually serving.</p>
+      </div>
+    </div>
+    <div class="callout reveal">
+      <p><strong>The spread inside "open" is real, and it's why curation is a product decision.</strong> The strongest open models price near frontier rates; the workhorse tier below them runs far cheaper. Deciding which model earns which workload is the difference between a price gap on a slide and one on your invoice.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt reveal">
+        <div class="eyebrow">The one variable that dominates</div>
+        <h3>Utilization decides who wins.</h3>
+        <p>The cost of an owned GPU-hour is the cost of running it plus the fixed cost of owning it, spread over the hours it actually serves. Because the fixed cost is recovered only over busy hours, unit cost rises steeply as utilization falls.</p>
+        <p>Independent research measured that curve directly: effective cost spanning <strong>$0.21 to $15.25 per million output tokens on identical hardware</strong>, a penalty of 2.5 to 24 times across the range of typical enterprise load.</p>
+        <p>Two consequences, and neither is controversial:</p>
+        <ul>
+          <li>An operator pooling demand across many customers runs at utilization no single tenant can match. That's why hosted APIs undercut a lightly used private cluster.</li>
+          <li>A buyer whose demand is genuinely sustained inverts the advantage: the fixed cost spreads across enough hours to fall below what any provider charges to cover the same asset plus margin.</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <figure style="margin:0">
+          <svg viewBox="0 0 460 320" style="width:100%;height:auto;display:block" role="img" aria-label="Chart: effective cost per token falls steeply as utilization rises">
+            <rect x="0" y="0" width="460" height="320" rx="12" fill="#ffffff" stroke="#e6e8ec"/>
+            <g font-family="Inter,system-ui,sans-serif">
+              <line x1="60" y1="40" x2="60" y2="260" stroke="#e6e8ec" stroke-width="1.5"/>
+              <line x1="60" y1="260" x2="420" y2="260" stroke="#e6e8ec" stroke-width="1.5"/>
+              <path d="M 70 55 C 110 70, 130 140, 175 185 C 225 232, 330 245, 415 248" fill="none" stroke="#2e6be6" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="86" cy="76" r="5" fill="#c0392f"/>
+              <text x="100" y="70" font-size="12.5" fill="#475467">lightly used private cluster</text>
+              <text x="100" y="86" font-size="11.5" fill="#98a2b3">fixed cost spread over few busy hours</text>
+              <circle cx="330" cy="243" r="5" fill="#12805c"/>
+              <text x="412" y="190" font-size="12.5" fill="#475467" text-anchor="end">sustained enterprise demand</text>
+              <text x="412" y="206" font-size="11.5" fill="#98a2b3" text-anchor="end">ownership beats any provider's price</text>
+              <text x="240" y="292" font-size="12" fill="#475467" text-anchor="middle">utilization → (share of hours actually serving)</text>
+              <text x="30" y="150" font-size="12" fill="#475467" text-anchor="middle" transform="rotate(-90 30 150)">effective $ / million tokens</text>
+              <text x="70" y="30" font-size="11" fill="#98a2b3">measured range on identical hardware: 2.5–24× </text>
+            </g>
+          </svg>
+          <figcaption style="font-size:12.5px;color:var(--muted);margin-top:10px;font-family:var(--mono)">Utilization is a property of your demand shape, not a dial. A business-hours workforce caps it; training or fine-tuning filling the idle hours lifts it.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Which posture wins, by workload profile.</h2>
+      <p>The crossover exists in every deployment; where it falls depends on inputs specific to yours. The shape of the answer, though, is consistent:</p>
+    </div>
+    <div class="tbl-scroll reveal">
+      <table>
+        <thead><tr><th>Workload profile</th><th>Cheapest source</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Low or bursty volume</td><td>Governed third-party API</td><td>Pooled operator utilization no single tenant matches.</td></tr>
+          <tr><td>High, steady volume</td><td>Owned or VPC capacity</td><td>Fixed cost amortizes across sustained hours.</td></tr>
+          <tr><td>Sustained volume under a sovereignty constraint</td><td>Owned or VPC capacity</td><td>Compliant alternatives price well above commodity rates.</td></tr>
+          <tr><td>Dual use: training alongside inference</td><td>Owned capacity</td><td>One asset displaces two rental bills.</td></tr>
+          <tr><td>Peak headroom above any baseline</td><td>Governed third-party API</td><td>Burst without sizing hardware for peak.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt reveal">
+        <div class="eyebrow">No magic number</div>
+        <h3>We won't quote you a universal breakeven. Anyone who does is selling something.</h3>
+        <p>A breakeven percentage quoted to the decimal, before anyone has measured your demand shape, is a modelling artifact dressed as a fact. We hold a working cost model, re-computable from its inputs, and we'll walk through it with you in diligence. But the number that decides your posture is yours:</p>
+        <ul>
+          <li>The same metering that enforces your budgets measures your real demand shape.</li>
+          <li>The posture recommendation is computed from your usage, not our assumptions.</li>
+          <li>Until the data says otherwise, the cheap posture is where you stay.</li>
+        </ul>
+      </div>
+      <div class="txt reveal">
+        <div class="eyebrow">Incentives</div>
+        <h3>Our fee doesn't care where your models run. That's the point.</h3>
+        <p>We're paid for governance, the application catalog, and operations, and the fee is charged in every posture. A customer who runs entirely on third-party APIs pays it; so does one who buys a cluster.</p>
+        <p>We earn nothing extra when you buy hardware and lose nothing when you don't, so when we tell you a workload should move, or stay put, the advice has no thumb on the scale. We're the party paid for the decision, not the outcome.</p>
+        <a class="foot-link" href="/pricing/">How the fee is structured →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What this looks like in practice.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Capture the gap now</h3>
+        <p>Move everyday seat work from frontier list prices to governed open-weight APIs under your own keys. No hardware, no procurement cycle, immediate difference on the bill.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Keep frontier where it earns it</h3>
+        <p>The work that genuinely needs a frontier model keeps it, through the same gateway, under allowances. Nobody argues about it, because the audit trail shows which work that is.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Let your meters call the crossover</h3>
+        <p>When a workload's sustained volume justifies fixed capacity, on-prem or VPC, your own numbers make the case. If they never do, you never buy hardware, and the product loses nothing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap reveal">
+    <div class="eyebrow centered">Next step</div>
+    <h2>Bring last month's AI bill.</h2>
+    <p>Thirty minutes with your actual spend, and we'll show you what the posture mix would look like, and what we'd wait to measure before recommending anything else.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Workload%20economics">Talk to us</a>
+      <a class="btn btn-ghost" href="/pricing/">Pricing structure</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="wordmark" href="/"><span class="brand-tile">F</span>Freehold</a>
+        <p>Managed private AI. Working applications, governed by your IT office, on your hardware, in your cloud, or through governed APIs. One SLA.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/platform/">Platform</a></li>
+          <li><a href="/applications/">Applications</a></li>
+          <li><a href="/governance/">Governance &amp; console</a></li>
+          <li><a href="/deployment/">Deployment postures</a></li>
+          <li><a href="/security/">Security &amp; sovereignty</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="/solutions/">Solutions</a></li>
+          <li><a href="/economics/">Economics</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/company/">About</a></li>
+          <li><a href="/company/#early-access">Early access</a></li>
+          <li><a href="mailto:hello@freeholdtech.ai">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© <span id="yr">2026</span> Freehold Technologies, Inc. · Delaware, USA</span>
+      <span><a href="mailto:hello@freeholdtech.ai">hello@freeholdtech.ai</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

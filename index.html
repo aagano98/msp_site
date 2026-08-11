@@ -3,428 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Freehold — Own your AI outright | Managed private AI infrastructure</title>
-<meta name="description" content="The API economy is a leasehold: rent by the token, on the landlord's terms. Freehold is private AI you own outright — certified hardware, governed applications, one SLA. Your data never leaves your perimeter, by architecture.">
-<meta property="og:title" content="Freehold — Own your AI outright">
-<meta property="og:description" content="Managed private AI infrastructure. Owned, not rented — data sovereignty enforced as an architectural property, not a policy promise.">
+<title>Freehold — The AI platform team you'll never hire | Managed private AI</title>
+<meta name="description" content="Freehold delivers working AI applications to your employees: enterprise chat, retrieval over your own documents, and a private coding assistant. Governed by your IT office, running on your hardware, in your cloud, or through governed APIs. One product, one SLA, no ML hires.">
+<meta property="og:title" content="Freehold — The AI platform team you'll never hire">
+<meta property="og:description" content="Working AI applications, governed by your own IT office, on your hardware, in your cloud, or through governed APIs. One product, one SLA.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freeholdtech.ai">
 <link rel="canonical" href="https://freeholdtech.ai/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c0f13'/%3E%3Crect x='7' y='7' width='18' height='18' rx='2' fill='none' stroke='%23e2b25f' stroke-width='2.2'/%3E%3Crect x='11' y='15' width='6' height='10' fill='%23e2b25f'/%3E%3C/svg%3E">
-<style>
-  :root {
-    --bg: #0c0f13;
-    --bg-raise: #12161c;
-    --bg-card: #10141a;
-    --ink: #ece7dd;
-    --ink-dim: #a8a294;
-    --ink-faint: #6f6a5e;
-    --accent: #e2b25f;
-    --accent-bright: #eec377;
-    --accent-soft: rgba(226, 178, 95, 0.12);
-    --line: rgba(200, 190, 170, 0.13);
-    --line-strong: rgba(200, 190, 170, 0.24);
-    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
-    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 17px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  /* background texture — survey-grid, like a plat map */
-  .grid-bg {
-    position: fixed; inset: 0; z-index: -2; pointer-events: none;
-    background-image:
-      linear-gradient(rgba(200,190,170,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200,190,170,0.05) 1px, transparent 1px);
-    background-size: 56px 56px;
-    mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 20%, transparent 75%);
-    -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 20%, transparent 75%);
-  }
-  .glow {
-    position: fixed; z-index: -1; pointer-events: none;
-    width: 900px; height: 520px; top: -220px; left: 50%; transform: translateX(-50%);
-    background: radial-gradient(ellipse at center, rgba(226,178,95,0.09), transparent 65%);
-  }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
-
-  /* nav */
-  nav {
-    position: sticky; top: 0; z-index: 50;
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-    background: rgba(12,15,19,0.8);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 62px; }
-  .wordmark {
-    font-family: var(--mono); font-size: 14px; font-weight: 600;
-    letter-spacing: 0.16em; color: var(--ink); text-decoration: none;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .wordmark svg { display: block; }
-  .nav-links { display: flex; gap: 28px; align-items: center; }
-  .nav-links a {
-    color: var(--ink-dim); text-decoration: none; font-size: 14.5px;
-    transition: color .15s;
-  }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-cta {
-    font-family: var(--mono); font-size: 13px !important;
-    color: var(--accent) !important; border: 1px solid rgba(226,178,95,0.35);
-    padding: 7px 14px; border-radius: 6px; transition: background .15s, border-color .15s;
-  }
-  .nav-cta:hover { background: var(--accent-soft); border-color: var(--accent); }
-
-  /* hero — header.wrap so this outweighs .wrap's own padding rule */
-  header.wrap { padding: 172px 28px 92px; }
-  .eyebrow {
-    font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 24px;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--accent); display: inline-block; }
-  h1 {
-    font-size: clamp(38px, 6vw, 64px); line-height: 1.05; font-weight: 700;
-    letter-spacing: -0.025em; max-width: 820px;
-  }
-  h1 .dim { color: var(--ink-faint); }
-  .hero-sub {
-    margin-top: 28px; font-size: 19px; color: var(--ink-dim); max-width: 640px; line-height: 1.65;
-  }
-  .hero-sub strong { color: var(--ink); font-weight: 600; }
-  .hero-ctas { margin-top: 38px; display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn {
-    display: inline-block; text-decoration: none; font-size: 15.5px; font-weight: 600;
-    padding: 13px 26px; border-radius: 8px; transition: transform .15s, background .15s, border-color .15s;
-  }
-  .btn-primary { background: var(--accent); color: #221807; }
-  .btn-primary:hover { transform: translateY(-1px); background: var(--accent-bright); }
-  .btn-ghost { color: var(--ink); border: 1px solid var(--line-strong); }
-  .btn-ghost:hover { border-color: var(--ink-faint); }
-  .hero-chips { margin-top: 56px; display: flex; gap: 10px; flex-wrap: wrap; }
-  .chip {
-    font-family: var(--mono); font-size: 12.5px; color: var(--ink-dim);
-    border: 1px solid var(--line); border-radius: 100px; padding: 7px 15px;
-    background: rgba(18,22,28,0.6);
-  }
-  .chip b { color: var(--accent); font-weight: 500; margin-right: 6px; }
-
-  /* sections */
-  section { padding: 88px 0; border-top: 1px solid var(--line); }
-  .sec-head { margin-bottom: 44px; max-width: 740px; }
-  h2 { font-size: clamp(26px, 3.6vw, 36px); letter-spacing: -0.02em; line-height: 1.15; font-weight: 700; }
-  .sec-head p { margin-top: 16px; color: var(--ink-dim); font-size: 17.5px; }
-
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .card {
-    background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px;
-    padding: 28px 26px; transition: border-color .2s;
-  }
-  .card:hover { border-color: var(--line-strong); }
-  .card .k {
-    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
-  }
-  .card h3 { font-size: 18.5px; font-weight: 650; margin-bottom: 10px; letter-spacing: -0.01em; }
-  .card p { font-size: 15px; color: var(--ink-dim); line-height: 1.65; }
-
-  /* ownership — the freehold vs leasehold section */
-  .definition {
-    font-family: var(--mono); border-left: 2px solid var(--accent);
-    padding: 18px 26px; margin: 0 0 48px; max-width: 640px;
-    background: var(--accent-soft); border-radius: 0 10px 10px 0;
-  }
-  .definition .word { font-size: 19px; color: var(--ink); letter-spacing: 0.02em; }
-  .definition .pos { color: var(--ink-faint); font-style: italic; margin: 0 8px; font-size: 14px; }
-  .definition .sense { display: block; margin-top: 8px; font-size: 14px; color: var(--ink-dim); line-height: 1.7; }
-  .definition .sense em { color: var(--accent); font-style: normal; }
-  .tenures { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  .tenure { border-radius: 14px; padding: 30px 30px 26px; border: 1px solid var(--line); }
-  .tenure.lease { background: var(--bg-card); }
-  .tenure.free {
-    border-color: rgba(226,178,95,0.4);
-    background: linear-gradient(180deg, rgba(226,178,95,0.07), rgba(16,20,26,0.4));
-  }
-  .tenure .k {
-    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .tenure.lease .k { color: var(--ink-faint); }
-  .tenure.free .k { color: var(--accent); }
-  .tenure h3 { font-size: 21px; letter-spacing: -0.015em; margin-bottom: 18px; }
-  .tenure ul { list-style: none; }
-  .tenure li {
-    font-size: 15px; color: var(--ink-dim); padding: 10px 0 10px 26px;
-    border-top: 1px solid var(--line); position: relative; line-height: 1.55;
-  }
-  .tenure li::before {
-    font-family: var(--mono); position: absolute; left: 2px; top: 10px; font-size: 13px;
-  }
-  .tenure.lease li::before { content: "—"; color: var(--ink-faint); }
-  .tenure.free li::before { content: "✓"; color: var(--accent); }
-  .tenure.free li { color: var(--ink); }
-  .stat-line {
-    margin-top: 18px; border: 1px solid var(--line); border-radius: 12px;
-    padding: 26px 30px; display: flex; gap: 40px; flex-wrap: wrap; align-items: center;
-    background: var(--bg-card);
-  }
-  .stat b { display: block; font-size: 26px; letter-spacing: -0.02em; color: var(--accent); font-weight: 700; }
-  .stat span { font-size: 13.5px; color: var(--ink-faint); }
-
-  /* sovereignty proofs */
-  .diff { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 44px; }
-  .diff-item {
-    border: 1px solid var(--line); border-radius: 12px; padding: 24px;
-    background: linear-gradient(180deg, rgba(18,22,28,0.7), rgba(16,20,26,0.4));
-  }
-  .diff-item h3 { font-size: 16.5px; font-weight: 650; margin-bottom: 8px; display: flex; align-items: baseline; gap: 9px; }
-  .diff-item h3::before { content: "▸"; color: var(--accent); font-size: 13px; }
-  .diff-item p { font-size: 14.5px; color: var(--ink-dim); }
-
-  /* architecture */
-  .arch {
-    border: 1px solid var(--line-strong); border-radius: 14px; overflow: hidden;
-    background: var(--bg-card); max-width: 780px; margin: 0 auto;
-  }
-  .arch-perimeter {
-    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--accent); padding: 14px 24px; border-bottom: 1px dashed rgba(226,178,95,0.4);
-    background: rgba(226,178,95,0.05); display: flex; justify-content: space-between; align-items: center;
-  }
-  .layer {
-    padding: 20px 24px; border-bottom: 1px solid var(--line);
-    display: flex; justify-content: space-between; align-items: center; gap: 16px;
-  }
-  .layer:last-child { border-bottom: none; }
-  .layer .l-name { font-weight: 650; font-size: 16px; letter-spacing: -0.01em; }
-  .layer .l-desc { font-size: 13.5px; color: var(--ink-faint); margin-top: 3px; }
-  .layer .l-tag {
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-    white-space: nowrap; padding: 5px 11px; border-radius: 5px;
-  }
-  .tag-ours { color: var(--accent); background: var(--accent-soft); border: 1px solid rgba(226,178,95,0.3); }
-  .tag-theirs { color: var(--ink-dim); background: rgba(200,190,170,0.07); border: 1px solid var(--line); }
-  .layer-ours { background: rgba(226,178,95,0.045); }
-  .arch-note { text-align: center; margin-top: 18px; font-size: 13.5px; color: var(--ink-faint); font-family: var(--mono); }
-
-  /* cta band */
-  .cta-band { text-align: center; padding: 104px 0; }
-  .cta-band h2 { max-width: 660px; margin: 0 auto; }
-  .cta-band p { margin: 18px auto 0; max-width: 580px; color: var(--ink-dim); }
-  .cta-band .hero-ctas { justify-content: center; }
-  .contact-line { margin-top: 26px; font-family: var(--mono); font-size: 14px; color: var(--ink-faint); }
-  .contact-line a { color: var(--accent); text-decoration: none; }
-
-  footer {
-    border-top: 1px solid var(--line); padding: 34px 0; font-size: 13.5px; color: var(--ink-faint);
-  }
-  .foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-  .foot-inner .wordmark { font-size: 12px; color: var(--ink-dim); }
-
-  /* reveal — fail-open: content is visible by default; JS adds .pre just-in-time,
-     and a safety timeout force-reveals anything the observer misses */
-  .reveal { transition: opacity .6s ease, transform .6s ease; }
-  .reveal.pre { opacity: 0; transform: translateY(14px); }
-
-  @media (max-width: 880px) {
-    .cards, .diff, .tenures { grid-template-columns: 1fr; }
-    .nav-links a:not(.nav-cta) { display: none; }
-    header.wrap { padding: 120px 28px 64px; }
-    section { padding: 64px 0; }
-    .layer { flex-direction: column; align-items: flex-start; gap: 8px; }
-    .stat-line { gap: 24px; }
-  }
-</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232e6be6'/%3E%3Ctext x='16' y='22.5' font-family='Arial,Helvetica,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-<div class="grid-bg"></div>
-<div class="glow"></div>
 
-<nav>
-  <div class="wrap nav-inner">
-    <a class="wordmark" href="#">
-      <svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="4" width="24" height="24" rx="3" fill="none" stroke="#e2b25f" stroke-width="2.6"/><rect x="9.5" y="15" width="8" height="13" fill="#e2b25f"/></svg>
-      FREEHOLD
-    </a>
-    <div class="nav-links">
-      <a href="#ownership">Ownership</a>
-      <a href="#product">Product</a>
-      <a href="#architecture">Architecture</a>
-      <a class="nav-cta" href="mailto:hello@freeholdtech.ai">CONTACT</a>
-    </div>
-  </div>
-</nav>
-
-<header class="wrap">
-  <div class="eyebrow">Managed Private AI Infrastructure</div>
-  <h1>Own your AI outright.<span class="dim"> Your models, your hardware, your perimeter.</span></h1>
-  <p class="hero-sub">Every API call is rent. Freehold is a configured AI deployment on certified hardware <strong>you own</strong> — governed applications, a control surface your IT leadership operates, <strong>one SLA</strong>. Your data never leaves your perimeter, by architecture.</p>
-  <div class="hero-ctas">
-    <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Freehold%20deployment">Talk to us</a>
-    <a class="btn btn-ghost" href="#ownership">The case for owning</a>
-  </div>
-  <div class="hero-chips">
-    <span class="chip"><b>01</b>Owned, not rented</span>
-    <span class="chip"><b>02</b>Zero Kubernetes exposure</span>
-    <span class="chip"><b>03</b>Fault-proven governance</span>
-    <span class="chip"><b>04</b>One SLA</span>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="/"><span class="brand-tile">F</span>Freehold</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="#101828" stroke-width="1.8" stroke-linecap="round"/></svg></label>
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li class="has-sub">
+          <a href="/platform/">Product</a>
+          <ul class="submenu">
+            <li><a href="/platform/">Platform<span class="sub-d">A deployment that arrives working</span></a></li>
+            <li><a href="/applications/">Applications<span class="sub-d">The catalog your employees open</span></a></li>
+            <li><a href="/governance/">Governance &amp; console<span class="sub-d">Built for IT generalists</span></a></li>
+            <li><a href="/deployment/">Deployment postures<span class="sub-d">On-prem, your cloud, governed API</span></a></li>
+            <li><a href="/security/">Security &amp; sovereignty<span class="sub-d">Your data stays yours, by architecture</span></a></li>
+          </ul>
+        </li>
+        <li><a href="/solutions/">Solutions</a></li>
+        <li><a href="/economics/">Economics</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/company/">Company</a></li>
+        <li><a class="nav-cta" href="mailto:hello@freeholdtech.ai?subject=Freehold%20deployment">Talk to us</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<section id="ownership">
+<div class="hero">
+  <div class="hero-bg"></div>
   <div class="wrap">
-    <div class="definition reveal">
-      <span class="word">free·hold</span><span class="pos">/ˈfriː.hoʊld/ · noun · property law</span>
-      <span class="sense">An estate held outright, <em>free of any landlord</em>. The opposite of a leasehold — occupancy on the owner's terms, reverting to the owner when the lease ends.</span>
+    <div class="eyebrow">Managed Private AI</div>
+    <h1>The AI platform team you'll never hire.</h1>
+    <p class="hero-sub">Freehold delivers working AI to your employees: enterprise chat, retrieval over your own documents, and a private coding assistant. <strong>Governed by your IT office</strong>, running on your hardware, in your cloud, or through governed APIs. One product, <strong>one SLA</strong>, no ML hires.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Freehold%20deployment">Talk to us</a>
+      <a class="btn btn-ghost" href="/platform/">See how it works</a>
     </div>
-    <div class="sec-head reveal">
-      <h2>AI infrastructure has two tenures.</h2>
-    </div>
-    <div class="tenures">
-      <div class="tenure lease reveal">
-        <div class="k">Leasehold</div>
-        <h3>Renting by the token</h3>
-        <ul>
-          <li>Per-token spend scales linearly with usage, forever.</li>
-          <li>Prices, models, and terms change on the landlord's schedule.</li>
-          <li>Every prompt crosses someone else's threshold.</li>
-          <li>When the contract ends, you hold nothing.</li>
-        </ul>
-      </div>
-      <div class="tenure free reveal">
-        <div class="k">Freehold</div>
-        <h3>Owning the stack</h3>
-        <ul>
-          <li>Certified hardware on your balance sheet, amortizing from day one.</li>
-          <li>A curated open-weight model menu, kept current. BYOK for the rest.</li>
-          <li>Data that never leaves your perimeter — provable to your auditor.</li>
-          <li>Operated under one SLA. Ownership without a platform team.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="stat-line reveal">
-      <div class="stat"><b>~15–20%</b><span>utilization where owning beats dedicated compliant cloud</span></div>
-      <div class="stat"><b>0</b><span>ML engineers needed to govern and operate it</span></div>
-      <div class="stat"><b>1</b><span>SLA — one accountable party, hardware to application</span></div>
+    <div class="hero-chips">
+      <span class="chip"><b>01</b>Finished applications, not toolkits</span>
+      <span class="chip"><b>02</b>Zero Kubernetes exposure</span>
+      <span class="chip"><b>03</b>Content-free audit</span>
+      <span class="chip"><b>04</b>One SLA</span>
     </div>
   </div>
-</section>
+</div>
 
-<section id="product">
+<section>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>A deployment, not a platform project.</h2>
-      <p>It arrives working. The operational machinery stays on our side, so you never have to learn it.</p>
+      <h2>Every company's AI stack is three layers. You shouldn't have to build any of them.</h2>
+      <p>The models doing the work, the rules about who can use which model and how, and the applications employees actually open. Enterprises with a platform team weld those layers into something that fits them. Everyone else buys frontier seats one login at a time and lives with the terms attached. Freehold is the third option: all three layers, pre-assembled, delivered as a configured deployment.</p>
     </div>
     <div class="cards">
       <div class="card reveal">
         <div class="k">Applications</div>
-        <h3>What employees actually use</h3>
-        <p>Enterprise chat, retrieval over your own corpus, and a private coding assistant in every developer's IDE — governed, and working on day one.</p>
+        <h3>What employees open on Monday</h3>
+        <p>Enterprise chat and content creation, retrieval over your own corpus, and a private coding assistant in every developer's IDE. Finished, named applications from a growing catalog, working on day one.</p>
+        <a class="foot-link" href="/applications/">Explore the catalog →</a>
+      </div>
+      <div class="card reveal">
+        <div class="k">Governance</div>
+        <h3>Rules your IT office actually controls</h3>
+        <p>Who can use what, on which model, with what budget, and what leaves the building. A config-only console built for the administrator who runs Google Workspace or M365, not for an ML engineer.</p>
+        <a class="foot-link" href="/governance/">See the console →</a>
       </div>
       <div class="card reveal">
         <div class="k">Models</div>
         <h3>A curated menu, kept current</h3>
-        <p>The strongest open weights, each selected for a job and right-sized to your hardware. Upgrades ship through the managed pipeline as the frontier moves.</p>
-      </div>
-      <div class="card reveal">
-        <div class="k">Governance</div>
-        <h3>Control without Kubernetes</h3>
-        <p>Model-per-app assignment, access, quotas, network posture, audit. Every action is a configuration change — never a console command.</p>
+        <p>The strongest open-weight models, each selected for a job and right-sized to your capacity, plus governed access to frontier providers under your own keys. Upgrades ship through the managed pipeline.</p>
+        <a class="foot-link" href="/platform/#models">How the menu works →</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="architecture">
+<section class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt reveal">
+        <div class="eyebrow">The Console</div>
+        <h3>Run AI the way you run Google Workspace.</h3>
+        <p>The Freehold console is organized around the five questions your leadership actually asks:</p>
+        <ul>
+          <li><strong>Is everything OK?</strong> One overview, honest numbers.</li>
+          <li><strong>Who can use what?</strong> People, groups, roles, budgets.</li>
+          <li><strong>What are we offering?</strong> Apps and models, priced on the shelf.</li>
+          <li><strong>Are we sized right?</strong> Capacity and usage, measured.</li>
+          <li><strong>Are we safe, and what changed?</strong> Posture and a complete audit trail.</li>
+        </ul>
+        <p>Every action is a configuration change, versioned and signed. Nothing your team does ever touches Kubernetes.</p>
+        <a class="foot-link" href="/governance/">Governance &amp; console →</a>
+      </div>
+      <div class="reveal">
+        <div class="shot" role="img" aria-label="Illustration of the Freehold admin console overview page">
+          <div class="shot-top"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-url">console.your-company.internal</span></div>
+          <div class="shot-body">
+            <div class="shot-side">
+              <div class="shot-brand"><span class="brand-tile">F</span>Freehold</div>
+              <ul class="shot-nav">
+                <li class="on">Overview<span>Is everything OK?</span></li>
+                <li>People &amp; access<span>Who can use what?</span></li>
+                <li>Applications<span>What are we offering?</span></li>
+                <li>Capacity &amp; usage<span>Are we sized right?</span></li>
+                <li>Safety &amp; evidence<span>What changed?</span></li>
+              </ul>
+            </div>
+            <div class="shot-main">
+              <div class="shot-h">Overview</div>
+              <div class="shot-sub">All systems reconciled · last change applied 12 min ago</div>
+              <div class="shot-kpis">
+                <div class="shot-kpi"><div class="kl">Status</div><div class="kv" style="color:var(--ok)">Healthy</div></div>
+                <div class="shot-kpi"><div class="kl">Members</div><div class="kv">184 <span class="u">across 9 groups</span></div></div>
+                <div class="shot-kpi"><div class="kl">Apps live</div><div class="kv">4 <span class="u">2 models hot</span></div></div>
+              </div>
+              <div class="shot-row"><div><div class="rn">Company chat</div><div class="rd">In-perimeter model · all groups</div></div><span class="pill pill-ok">in perimeter</span></div>
+              <div class="shot-row"><div><div class="rn">Coding assistant</div><div class="rd">IDE endpoint · engineering group</div></div><span class="pill pill-ok">in perimeter</span></div>
+              <div class="shot-row"><div><div class="rn">Research assistant</div><div class="rd">Frontier model · your keys · allowanced</div></div><span class="pill pill-info">governed egress</span></div>
+              <div class="shot-note">every number carries its provenance: measured, derived, or declared</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>One product. Three places models can run.</h2>
+      <p>The platform, your console, gateway, applications, and member memory, always runs under your control. The models are the layer that moves: each workload runs wherever its economics and constraints point, and can be moved later without a re-integration project.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="k">On-premises</div>
+        <h3>Your hardware, your building</h3>
+        <p>Certified enterprise AI systems from Dell, HPE, or Lenovo, on your balance sheet, installed and operated under our SLA. The strongest sovereignty and the best economics at high sustained volume.</p>
+        <span class="pill pill-ok">strongest sovereignty</span>
+      </div>
+      <div class="card reveal">
+        <div class="k">Your cloud</div>
+        <h3>A VPC in your name</h3>
+        <p>GPU capacity rented in your own cloud tenancy. No capex, data stays in your tenancy. Don't have a cloud footprint? We stand one up in your name as part of onboarding.</p>
+        <span class="pill pill-info">control without a data center</span>
+      </div>
+      <div class="card reveal">
+        <div class="k">Governed API</div>
+        <h3>Frontier &amp; open models, your keys</h3>
+        <p>Third-party providers reached through your own governed gateway, under your own keys, with per-person budgets and a content-free audit. Start today, no procurement cycle.</p>
+        <span class="pill pill-pend">fastest start</span>
+      </div>
+    </div>
+    <div class="callout reveal">
+      <p><strong>Mixing postures is the point.</strong> One group's chat can run on a local model while another group's runs against a frontier provider under your key with an allowance, falling back to the local model when it's spent. Moving a workload between postures changes where its model runs and nothing else.</p>
+    </div>
+    <div style="margin-top:8px" class="reveal"><a class="foot-link" href="/deployment/">Deployment postures in detail →</a></div>
+  </div>
+</section>
+
+<section class="alt">
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Sovereignty as an architectural property.</h2>
-      <p>Not a contract clause — a system property. Isolation posture is a configurable ladder: full air gap, governed egress with every outbound call logged, or open.</p>
+      <p>Not a contract clause: a system property. Your data staying inside your perimeter is the design constraint the whole product is built to hold, and where data does cross a boundary, the crossing is explicit, permitted, and labelled.</p>
     </div>
-    <div class="diff">
-      <div class="diff-item reveal">
-        <h3>One control path</h3>
-        <p>Every change is versioned, signed config, reconciled by a proven GitOps engine. Drift is detected and reverted. The audit trail is the change history.</p>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="k">One control path</div>
+        <h3>Config in, everything else out</h3>
+        <p>Every change is versioned, signed configuration, reconciled by a proven GitOps engine. Drift is detected and reverted. The audit trail is the change history.</p>
       </div>
-      <div class="diff-item reveal">
-        <h3>Structural separation</h3>
-        <p>We operate the control plane and are architecturally unable to read the data plane. Telemetry carries control-plane fields only — a constraint that also binds our subcontractors.</p>
+      <div class="card reveal">
+        <div class="k">Structural separation</div>
+        <h3>We never see your data</h3>
+        <p>We operate the control plane and are architecturally unable to read the data plane. Prompts, documents, and weights are never visible to us, and that constraint contractually binds our subcontractors too.</p>
       </div>
-      <div class="diff-item reveal">
-        <h3>Fault-proven</h3>
-        <p>Every enforcement control is validated by injected-fault tests — shown to fail visibly and recover cleanly before we claim it.</p>
-      </div>
-    </div>
-    <div class="arch reveal">
-      <div class="arch-perimeter"><span>Your perimeter</span><span>nothing inside leaves</span></div>
-      <div class="layer">
-        <div><div class="l-name">Governed applications</div><div class="l-desc">Enterprise chat · retrieval over your corpus · IDE coding endpoint</div></div>
-        <span class="l-tag tag-ours">We deliver</span>
-      </div>
-      <div class="layer layer-ours">
-        <div><div class="l-name">The Freehold layer — governance &amp; experience</div><div class="l-desc">Config-driven control · access &amp; quotas · egress posture · audit</div></div>
-        <span class="l-tag tag-ours">We build &amp; operate</span>
-      </div>
-      <div class="layer">
-        <div><div class="l-name">NVIDIA AI Enterprise</div><div class="l-desc">NIM model serving · Run:ai scheduling &amp; orchestration</div></div>
-        <span class="l-tag tag-theirs">Certified stack</span>
-      </div>
-      <div class="layer">
-        <div><div class="l-name">Certified enterprise hardware</div><div class="l-desc">Dell · HPE · Lenovo AI factory lines — on your balance sheet</div></div>
-        <span class="l-tag tag-theirs">Yours</span>
+      <div class="card reveal">
+        <div class="k">Fault-proven</div>
+        <h3>Tested by breaking it</h3>
+        <p>Every enforcement control is validated by injected-fault tests: shown to fail visibly and recover cleanly before we claim it. The audit trail is content-free by construction.</p>
       </div>
     </div>
-    <div class="arch-note">one SLA · one accountable party · substrate work delivered by the hardware vendor as our subcontractor</div>
+    <div style="margin-top:24px" class="reveal"><a class="foot-link" href="/security/">Security &amp; sovereignty in detail →</a></div>
   </div>
 </section>
 
-<section class="cta-band">
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>How buying works.</h2>
+      <p>A configured deployment, not a platform project. It arrives working, and the operational machinery stays on our side so you never have to learn it.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Configure</h3>
+        <p>Select applications from the catalog, models from the curated menu, and the posture mix that fits your constraints. Every app carries its price on the shelf. A deployment is a selection, not a specification document.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Bounded onboarding</h3>
+        <p>A fixed-scope engagement: identity federation with your IdP, corpus ingestion for retrieval, hardware install where your posture includes it. No open-ended integration project, no platform team required on your side.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Operated, under one SLA</h3>
+        <p>We run the platform and gate every update; hardware vendors deliver field service as our subcontractors, never as a second vendor you manage. Your recourse is always us. The catalog keeps growing while you run.</p>
+      </div>
+    </div>
+    <div style="margin-top:24px" class="reveal"><a class="foot-link" href="/pricing/">How pricing is structured →</a></div>
+  </div>
+</section>
+
+<div class="cta-band">
   <div class="wrap reveal">
-    <div class="eyebrow" style="justify-content:center;">Early access</div>
-    <h2>Selecting early deployment partners in regulated industries.</h2>
-    <p>The engine, config schema, and governance topology are built and fault-proven. We're working with a small number of design partners ahead of certified-stack validation.</p>
+    <div class="eyebrow centered">Early access</div>
+    <h2>Selecting early deployment partners.</h2>
+    <p>The governance core is built and fault-tested. We're working with a small number of design partners, with priority for regulated industries and teams that will push the catalog hardest.</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Design%20partner%20conversation">Start a conversation</a>
+      <a class="btn btn-ghost" href="/faq/">Read the FAQ</a>
     </div>
     <div class="contact-line"><a href="mailto:hello@freeholdtech.ai">hello@freeholdtech.ai</a></div>
   </div>
-</section>
+</div>
 
-<footer>
-  <div class="wrap foot-inner">
-    <span class="wordmark">
-      <svg width="13" height="13" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="4" width="24" height="24" rx="3" fill="none" stroke="#e2b25f" stroke-width="2.6"/><rect x="9.5" y="15" width="8" height="13" fill="#e2b25f"/></svg>
-      FREEHOLD
-    </span>
-    <span>Freehold is a product of AJG Ventures LLC · Georgia, USA · © <span id="yr">2026</span></span>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="wordmark" href="/"><span class="brand-tile">F</span>Freehold</a>
+        <p>Managed private AI. Working applications, governed by your IT office, on your hardware, in your cloud, or through governed APIs. One SLA.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/platform/">Platform</a></li>
+          <li><a href="/applications/">Applications</a></li>
+          <li><a href="/governance/">Governance &amp; console</a></li>
+          <li><a href="/deployment/">Deployment postures</a></li>
+          <li><a href="/security/">Security &amp; sovereignty</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="/solutions/">Solutions</a></li>
+          <li><a href="/economics/">Economics</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/company/">About</a></li>
+          <li><a href="/company/#early-access">Early access</a></li>
+          <li><a href="mailto:hello@freeholdtech.ai">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© <span id="yr">2026</span> Freehold Technologies, Inc. · Delaware, USA</span>
+      <span><a href="mailto:hello@freeholdtech.ai">hello@freeholdtech.ai</a></span>
+    </div>
   </div>
 </footer>
 
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-  (() => {
-    if (!('IntersectionObserver' in window)) return; // no JS animation support -> everything stays visible
-    const els = [...document.querySelectorAll('.reveal')];
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    els.forEach(el => {
-      const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight && r.bottom > 0) return; // already on screen -> never hide it
-      el.classList.add('pre');
-      io.observe(el);
-    });
-    // safety net: nothing stays hidden past 2s, whatever the observer does
-    setTimeout(() => els.forEach(el => el.classList.remove('pre')), 2000);
-  })();
-</script>
+<script src="/assets/site.js"></script>
 </body>
 </html>
