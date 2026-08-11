@@ -29,8 +29,11 @@ dense content above the fold; restrained palette taken from the Bastion console 
 Chaparro, Baker, Shaikh, Hull & Brady 2004 (Usability News, Wichita State SURL): text with
 margins produced higher comprehension and satisfaction than full-width text.
 
-**Rules applied:** section padding 112px (72px mobile); split-row gap 72px with 104px between
-rows; card padding 30/28px; content never spans the full 1120px container.
+**Rules applied:** margins are functional, never dead air (the unslop data flags "endless
+whitespace" as its own tell, and the owner calibrated the first, airier system down on
+2026-08-11): section padding 72px (52px mobile), split-row gap 56px with 64px between rows,
+hero-to-content seam 48px, and text measures 60-72ch inside a 1080px container with
+viewport-scaled gutters (clamp 20-44px).
 
 - https://portfolio.erau.edu/en/publications/reading-online-text-a-comparison-of-four-white-space-layouts/
 
@@ -40,7 +43,7 @@ Dyson & Haselgrove 2001 and the surrounding literature: moderate line lengths (~
 read best on screen; very long lines hurt comprehension.
 
 **Rules applied:** `max-width` in `ch` units on lead paragraphs (64ch), callouts (66ch),
-checklists (68ch), FAQ answers (72ch); hero subtitle capped at 620px.
+checklists (72ch), FAQ answers (72ch); hero subtitle capped at 680px.
 
 - https://www.researchgate.net/publication/220106760_The_Influence_of_Reading_Speed_and_Line_Length_on_the_Effectiveness_of_Reading_from_Screen
 

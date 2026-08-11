@@ -32,7 +32,7 @@ a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .mono{font-family:var(--mono)}
-.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(24px,5vw,72px)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,3.5vw,44px)}
 
 /* ---------- header ---------- */
 .site-header{
@@ -72,7 +72,7 @@ a:hover{text-decoration:underline}
 .nav-toggle-label svg{display:block}
 
 /* ---------- hero ---------- */
-.hero{position:relative;padding:128px 0 80px;overflow:hidden}
+.hero{position:relative;padding:96px 0 64px;overflow:hidden}
 .hero-bg{
   position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:
@@ -91,9 +91,9 @@ a:hover{text-decoration:underline}
 .eyebrow.centered{justify-content:center}
 h1{font-size:clamp(34px,5.4vw,56px);line-height:1.08;font-weight:700;letter-spacing:-.025em;max-width:840px}
 h1 .dim{color:var(--muted)}
-.hero-sub{margin-top:28px;font-size:18.5px;color:var(--ink-2);max-width:620px;line-height:1.7}
+.hero-sub{margin-top:22px;font-size:18.5px;color:var(--ink-2);max-width:680px;line-height:1.65}
 .hero-sub strong{color:var(--ink);font-weight:600}
-.hero-ctas{margin-top:40px;display:flex;gap:12px;flex-wrap:wrap}
+.hero-ctas{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
 .btn{
   display:inline-block;text-decoration:none;font-size:15px;font-weight:600;
   padding:12px 24px;border-radius:var(--r-btn);transition:background .15s,border-color .15s,transform .15s;
@@ -103,7 +103,7 @@ h1 .dim{color:var(--muted)}
 .btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
 .btn-ghost{color:var(--ink);border:1px solid var(--border);background:var(--surface)}
 .btn-ghost:hover{border-color:var(--muted)}
-.hero-chips{margin-top:56px;display:flex;gap:10px;flex-wrap:wrap}
+.hero-chips{margin-top:40px;display:flex;gap:10px;flex-wrap:wrap}
 .chip{
   font-family:var(--mono);font-size:12.5px;color:var(--ink-2);
   border:1px solid var(--border);border-radius:6px;padding:7px 14px;background:var(--surface);
@@ -111,24 +111,24 @@ h1 .dim{color:var(--muted)}
 .chip b{color:var(--accent);font-weight:600;margin-right:6px}
 
 /* ---------- sections ---------- */
-section{padding:112px 0}
+section{padding:72px 0}
 /* the section directly after a hero starts sooner — hero bottom padding and section
    top padding otherwise stack into a dead zone */
-.hero+section,.page-hero+section{padding-top:72px}
+.hero+section,.page-hero+section{padding-top:48px}
 section.alt{background:var(--surface);border-top:1px solid var(--divider);border-bottom:1px solid var(--divider)}
-.sec-head{margin-bottom:56px;max-width:720px}
+.sec-head{margin-bottom:36px;max-width:780px}
 .sec-head.centered{margin-left:auto;margin-right:auto;text-align:center}
 h2{font-size:clamp(25px,3.4vw,34px);letter-spacing:-.02em;line-height:1.18;font-weight:700}
-.sec-head p{margin-top:16px;color:var(--ink-2);font-size:17px;max-width:64ch;line-height:1.7}
+.sec-head p{margin-top:14px;color:var(--ink-2);font-size:17px;max-width:70ch;line-height:1.65}
 .sec-head.centered p{margin-left:auto;margin-right:auto}
 h3{letter-spacing:-.01em}
 
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .cards.two{grid-template-columns:repeat(2,1fr)}
 .cards.four{grid-template-columns:repeat(4,1fr)}
 .card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);
-  padding:30px 28px;box-shadow:var(--sh-card);transition:border-color .2s;
+  padding:26px 24px;box-shadow:var(--sh-card);transition:border-color .2s;
 }
 .card:hover{border-color:#d3d8e0}
 .card .k{
@@ -142,7 +142,7 @@ h3{letter-spacing:-.01em}
 .card .foot-link{display:inline-block;margin-top:14px;font-size:14px;font-weight:600}
 
 /* split feature rows */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-bottom:104px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:64px}
 .split:last-child{margin-bottom:0}
 .split .txt h3{font-size:22px;font-weight:700;letter-spacing:-.015em;margin-bottom:12px}
 .split .txt p{color:var(--ink-2);font-size:15.5px;margin-bottom:12px}
@@ -250,7 +250,7 @@ tr:last-child td{border-bottom:none}
 .shot-note{font-size:10.5px;color:var(--muted);margin-top:8px;font-family:var(--mono)}
 
 /* numbered steps */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step}
 .step{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);
   padding:26px 24px;box-shadow:var(--sh-card);counter-increment:step;position:relative;
@@ -267,7 +267,7 @@ tr:last-child td{border-bottom:none}
 .checks{list-style:none}
 .checks li{
   padding:12px 0 12px 30px;border-top:1px solid var(--divider);position:relative;
-  color:var(--ink-2);font-size:15px;line-height:1.6;max-width:68ch;
+  color:var(--ink-2);font-size:15px;line-height:1.6;max-width:72ch;
 }
 .checks li strong{color:var(--ink)}
 .checks li::before{
@@ -295,7 +295,7 @@ tr:last-child td{border-bottom:none}
 /* callout */
 .callout{
   border-left:3px solid var(--accent);background:var(--accent-soft);
-  border-radius:0 10px 10px 0;padding:22px 26px;margin:40px 0;max-width:720px;
+  border-radius:0 10px 10px 0;padding:20px 24px;margin:28px 0;max-width:760px;
 }
 .callout p{color:var(--ink-2);font-size:15px;line-height:1.65;max-width:66ch}
 .callout p strong{color:var(--ink)}
@@ -313,7 +313,7 @@ tr:last-child td{border-bottom:none}
 .definition .sense em{color:var(--accent);font-style:normal}
 
 /* page hero (interior pages) */
-.page-hero{padding:96px 0 56px;position:relative;overflow:hidden}
+.page-hero{padding:60px 0 40px;position:relative;overflow:hidden}
 .page-hero h1{font-size:clamp(30px,4.4vw,44px)}
 .page-hero .hero-sub{font-size:17.5px}
 .crumbs{font-size:13px;color:var(--muted);margin-bottom:18px;font-family:var(--mono)}
@@ -322,7 +322,7 @@ tr:last-child td{border-bottom:none}
 
 /* CTA band — left-aligned on purpose; the centered closing band is a template tell */
 .cta-band{
-  background:var(--ink);color:#fff;padding:116px 0;
+  background:var(--ink);color:#fff;padding:80px 0;
 }
 .cta-band h2{color:#fff;max-width:680px}
 .cta-band p{margin:16px 0 0;max-width:60ch;color:rgba(255,255,255,.75);font-size:16.5px}
@@ -332,9 +332,9 @@ tr:last-child td{border-bottom:none}
 .contact-line a{color:#8fb1f3}
 
 /* footer */
-.site-footer{background:var(--ink);color:rgba(255,255,255,.65);font-size:14px;padding:72px 0 40px}
+.site-footer{background:var(--ink);color:rgba(255,255,255,.65);font-size:14px;padding:56px 0 36px}
 .cta-band+.site-footer{border-top:1px solid rgba(255,255,255,.12)}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
 .foot-brand .wordmark{color:#fff;margin-bottom:12px}
 .foot-brand p{font-size:13.5px;line-height:1.6;max-width:300px}
 .foot-col h4{
@@ -405,7 +405,7 @@ section.ink .card .k{color:#8fb1f3}
 .compare-col p{font-size:14.5px;color:var(--ink-2)}
 
 /* compact closer — interior pages end here; the dark band is reserved for home + company */
-.closer{border-top:1px solid var(--border);background:var(--surface);padding:64px 0}
+.closer{border-top:1px solid var(--border);background:var(--surface);padding:56px 0}
 .closer-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
 .closer h3{font-size:22px;letter-spacing:-.015em;font-weight:700}
 .closer p{color:var(--ink-2);font-size:15px;margin-top:6px;max-width:58ch}
@@ -429,11 +429,11 @@ section.ink .card .k{color:#8fb1f3}
 @media (max-width:720px){
   .cards,.cards.two,.cards.four{grid-template-columns:1fr}
   .stat-band{grid-template-columns:1fr 1fr}
-  .hero{padding:88px 0 56px}
-  .page-hero{padding:72px 0 44px}
-  section{padding:72px 0}
-  .hero+section,.page-hero+section{padding-top:56px}
-  .split{margin-bottom:64px}
+  .hero{padding:64px 0 44px}
+  .page-hero{padding:44px 0 30px}
+  section{padding:52px 0}
+  .hero+section,.page-hero+section{padding-top:40px}
+  .split{margin-bottom:48px}
   .layer{flex-direction:column;align-items:flex-start;gap:8px}
   .shot-side{display:none}
   /* mobile nav */
