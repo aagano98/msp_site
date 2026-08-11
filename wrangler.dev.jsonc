@@ -1,0 +1,13 @@
+// Dev worker (freehold-site-dev): serves the dev branch at dev.freeholdtech.ai.
+// Deploy: npx wrangler deploy --config wrangler.dev.jsonc   (Workers Builds runs this on push to dev)
+{
+  "name": "freehold-site-dev",
+  "compatibility_date": "2026-08-11",
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "dev.freeholdtech.ai", "custom_domain": true }],
+  "workers_dev": true
+}
