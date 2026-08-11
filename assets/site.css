@@ -43,10 +43,7 @@ a:hover{text-decoration:underline}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:18px}
 .wordmark{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:650;font-size:16.5px;letter-spacing:-.01em}
 .wordmark:hover{text-decoration:none}
-.brand-tile{
-  width:28px;height:28px;border-radius:7px;background:var(--accent);color:#fff;
-  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex:0 0 28px;
-}
+.brand-tile{width:28px;height:28px;flex:0 0 28px}
 .main-nav{display:flex;align-items:center;gap:4px}
 .main-nav>ul{display:flex;list-style:none;gap:2px;align-items:center}
 .main-nav a{color:var(--ink-2);font-size:14.5px;font-weight:500;padding:8px 12px;border-radius:8px;display:block}
@@ -227,7 +224,7 @@ tr:last-child td{border-bottom:none}
 .shot-body{display:flex;min-height:300px}
 .shot-side{width:168px;border-right:1px solid var(--divider);padding:12px 8px;flex:0 0 168px;background:var(--surface)}
 .shot-brand{display:flex;align-items:center;gap:7px;padding:2px 8px 10px;font-weight:650;font-size:13px}
-.shot-brand .brand-tile{width:20px;height:20px;border-radius:5px;font-size:11px;flex:0 0 20px}
+.shot-brand .brand-tile{width:20px;height:20px;flex:0 0 20px}
 .shot-nav{list-style:none}
 .shot-nav li{padding:6px 8px;border-radius:6px;color:var(--ink-2);font-size:12px;margin-bottom:1px}
 .shot-nav li span{display:block;font-size:10px;color:var(--muted)}
