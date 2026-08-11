@@ -1,0 +1,12 @@
+// Production worker (freehold-site): serves this branch's static files at freeholdtech.ai.
+// Deploy: npx wrangler deploy   (Workers Builds runs this on push to main)
+{
+  "name": "freehold-site",
+  "compatibility_date": "2026-08-11",
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true
+}
