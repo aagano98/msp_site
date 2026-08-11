@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Applications — Every app arrives finished | Freehold</title>
-<meta name="description" content="The Freehold catalog: enterprise chat, retrieval over your own documents, and a private coding assistant, plus add-on applications. Every app arrives finished, governed, and kept current across your fleet.">
-<meta property="og:title" content="Freehold Applications — Every app arrives finished">
-<meta property="og:description" content="Enterprise chat, retrieval over your corpus, and a private coding assistant, delivered finished, governed, and kept current across your fleet.">
+<title>Applications — The open-source catalog, governed | Freehold</title>
+<meta name="description" content="The enterprise AI experience already exists in open source. The Freehold catalog delivers those proven projects governed: LibreChat, Continue, AnythingLLM, RAGFlow and more, integrated, metered, and kept current across your fleet.">
+<meta property="og:title" content="Freehold Applications — The open-source catalog, governed">
+<meta property="og:description" content="Proven open-source AI applications, delivered with enterprise control: identity, budgets, data boundaries, and updates, under one SLA.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freeholdtech.ai/applications/">
 <link rel="canonical" href="https://freeholdtech.ai/applications/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='7' fill='%232e6be6'/%3E%3Crect x='7' y='6.5' width='14' height='4.5' rx='1.5' fill='white'/%3E%3Crect x='7' y='12.5' width='4.5' height='9' rx='1.5' fill='white'/%3E%3Crect x='13' y='12.5' width='6.5' height='4' rx='1.5' fill='white'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/site.css?v=5">
+<link rel="stylesheet" href="../assets/site.css?v=6">
 </head>
 <body>
 
@@ -55,81 +55,122 @@
   <div class="wrap">
     <div class="crumbs"><a href="../">Home</a> / Applications</div>
     <div class="eyebrow">Applications</div>
-    <h1>Every application arrives finished.</h1>
-    <p class="hero-sub">The product is the finished thing an employee opens on Monday morning: a catalog of named applications, delivered governed, kept current across your fleet, and working the day they land. Your teams use them without anyone on your staff assembling them.</p>
+    <h1>The enterprise AI experience already exists in open source.</h1>
+    <p class="hero-sub">Chat, retrieval over your own documents, coding assistants: the applications your employees want are proven open-source products with huge communities behind them. The hard part has always been giving your people governed access to them: identity, budgets, data boundaries, updates, one support line. That is exactly what Freehold delivers. Every project below ships integrated under our app contract, working the day it lands, kept current across your fleet.</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Freehold%20catalog">Talk to us</a>
-      <a class="btn btn-ghost" href="#library">The standard library</a>
+      <a class="btn btn-ghost" href="#catalog">Browse the catalog</a>
     </div>
   </div>
 </div>
 
-<section id="library">
+<section id="catalog">
   <div class="wrap">
     <div class="sec-head">
-      <h2>The standard library, included in every deployment.</h2>
-      <p>Three applications cover what most employees need from day one. They ship as proven, named applications integrated under our app contract, with licenses honored, and they behave as one product because a single governed memory layer sits underneath all of them.</p>
+      <h2>Real projects, under their real names.</h2>
+      <p>The catalog is built from the open-source products these communities have already proven, integrated under the Freehold app contract: licenses inventoried and honored, notices preserved, sign-in bridged to your identity, usage metered against budgets, and updates shipped across the fleet by us. Projects whose license terms are still under review for governed redistribution are listed honestly as still in development.</p>
     </div>
-
-    <div class="split">
-      <div class="txt">
-        <div class="eyebrow">01 · Chat &amp; content</div>
-        <h3>Enterprise chat and content creation.</h3>
-        <p>The surface most employees touch every day: the chat experience your team already wants from consumer AI tools, on models your company chose, under rules your company set.</p>
+    <div class="app-grid">
+      <div class="app-card">
+        <div class="app-head">
+          <img class="app-logo" src="../assets/apps/librechat.png" alt="" width="40" height="40">
+          <div><h3>LibreChat</h3><div class="app-cat">Chat &amp; content</div></div>
+        </div>
+        <p>An enterprise chat workspace with the polish of the consumer tools: threads, agents, file uploads, and search, served in your perimeter against the models your company chose.</p>
         <ul>
-          <li>Runs against local models, or frontier providers under your own keys with allowances.</li>
-          <li>Group-level model assignment: each team gets the model that fits its work.</li>
-          <li>Prompts and threads stay in your perimeter unless a labelled, governed crossing says otherwise.</li>
+          <li>Multi-model conversations, agents, and file analysis in one interface.</li>
+          <li>Runs against hosted models, or frontier providers under your own keys.</li>
+          <li>OIDC sign-in bridges cleanly to the governed gateway.</li>
         </ul>
-      </div>
-      <div>
-        <div class="card">
-          <div class="k">In the console</div>
-          <p><strong>Company chat</strong></p>
-          <p style="margin-top:6px">Powered by Llama 3.3 70B, hosted in your perimeter · all groups · <span class="pill pill-ok">in perimeter</span></p>
-          <p style="margin-top:10px">Optional: frontier escalation under your key, per-person allowance, automatic fallback to the hosted model when spent.</p>
+        <div class="app-why"><div class="k">Why your people will want it</div>The chat experience your teams keep asking for, with every thread stored on your side of the wall.</div>
+        <div class="app-meta">
+          <a href="https://github.com/danny-avila/LibreChat">github.com/danny-avila/LibreChat &rarr;</a>
+          <span><span class="pill pill-ok">in the catalog</span> <span class="app-lic">MIT license</span></span>
         </div>
       </div>
-    </div>
-
-    <div class="split">
-      <div class="txt">
-        <div class="eyebrow">02 · Retrieval</div>
-        <h3>Retrieval over your own corpus.</h3>
-        <p>What makes it <em>your</em> AI: answers grounded in your own documents, policies, contracts, and wikis. We deliberately scope this to "ingest your sources and retrieval works": a finished capability, sized so it runs without an engineering team behind it.</p>
+      <div class="app-card">
+        <div class="app-head">
+          <img class="app-logo" src="../assets/apps/continue.png" alt="" width="40" height="40">
+          <div><h3>Continue</h3><div class="app-cat">Coding assistant</div></div>
+        </div>
+        <p>An open-source coding agent for VS Code and JetBrains: autocomplete, chat, and edit-in-place, pointed at your governed model endpoint.</p>
         <ul>
-          <li>Corpus bindings are configured at deployment and evolve as your sources do.</li>
-          <li>Your documents never leave your perimeter; retrieval runs inside it.</li>
-          <li>Access follows your groups: people only retrieve from sources they're allowed to see.</li>
+          <li>Lives in the IDEs your developers already use.</li>
+          <li>Autocomplete, chat, and agent modes, each bindable to the model that fits.</li>
+          <li>Code and prompts stay in your perimeter; docs lookups ride a whitelisted, logged egress.</li>
         </ul>
-      </div>
-      <div>
-        <div class="card">
-          <div class="k">In the console</div>
-          <p><strong>Knowledge assistant</strong></p>
-          <p style="margin-top:6px">Corpus: policies, contracts, wiki · finance + legal groups · <span class="pill pill-ok">in perimeter</span></p>
-          <p style="margin-top:10px">Sources are bound per app; the sovereignty score shows exactly what each app can reach.</p>
+        <div class="app-why"><div class="k">Why your people will want it</div>Developers get the assistant they have been asking security to unblock, on models your company runs.</div>
+        <div class="app-meta">
+          <a href="https://github.com/continuedev/continue">github.com/continuedev/continue &rarr;</a>
+          <span><span class="pill pill-ok">in the catalog</span> <span class="app-lic">Apache-2.0 license</span></span>
         </div>
       </div>
-    </div>
-
-    <div class="split">
-      <div class="txt">
-        <div class="eyebrow">03 · Coding</div>
-        <h3>A private coding assistant, in the IDE your developers already use.</h3>
-        <p>Often the most acute unmet need: mainstream coding assistants phone home, so security teams block them, and developers lose the tool they want most. Freehold exposes a governed model endpoint to the IDE of choice, so code and prompts stay under your control.</p>
+      <div class="app-card">
+        <div class="app-head">
+          <img class="app-logo" src="../assets/apps/anythingllm.png" alt="" width="40" height="40">
+          <div><h3>AnythingLLM</h3><div class="app-cat">Knowledge &amp; RAG</div></div>
+        </div>
+        <p>A workspace-based retrieval product: load your documents, ask questions, and get grounded answers with citations, permissioned per workspace.</p>
         <ul>
-          <li>High-value, high-volume, sustained work: exactly the load that justifies owned capacity over time.</li>
-          <li>Benefits from controlled egress: live docs and package lookups are permitted, logged, and labelled.</li>
-          <li>Same gateway, same budgets, same audit trail as every other app.</li>
+          <li>Workspaces map naturally onto your groups and their sources.</li>
+          <li>Answers cite the documents they came from.</li>
+          <li>Ingestion and retrieval run entirely inside your perimeter.</li>
         </ul>
+        <div class="app-why"><div class="k">Why your people will want it</div>Ask the policy binder, the contract archive, and the wiki a question, and get an answer that shows its sources.</div>
+        <div class="app-meta">
+          <a href="https://github.com/Mintplex-Labs/anything-llm">github.com/Mintplex-Labs/anything-llm &rarr;</a>
+          <span><span class="pill pill-ok">in the catalog</span> <span class="app-lic">MIT license</span></span>
+        </div>
       </div>
-      <div>
-        <div class="card">
-          <div class="k">In the console</div>
-          <p><strong>Coding assistant</strong></p>
-          <p style="margin-top:6px">Powered by Qwen2.5-Coder-32B · IDE endpoint · engineering group · <span class="pill pill-info">governed egress</span></p>
-          <p style="margin-top:10px">Egress: docs and package registries, whitelisted and logged. Everything else stays in.</p>
+      <div class="app-card">
+        <div class="app-head">
+          <img class="app-logo" src="../assets/apps/ragflow.svg" alt="" width="40" height="40">
+          <div><h3>RAGFlow</h3><div class="app-cat">Deep-document retrieval</div></div>
+        </div>
+        <p>A retrieval engine built for messy enterprise paperwork: layout-aware parsing of PDFs, tables, and scans, with traceable, grounded citations.</p>
+        <ul>
+          <li>Deep document understanding: tables, figures, and scanned layouts survive parsing.</li>
+          <li>Template-based chunking you can inspect and tune per corpus.</li>
+          <li>An API surface other catalog applications can build on.</li>
+        </ul>
+        <div class="app-why"><div class="k">Why your people will want it</div>The contracts and reports your teams actually need answers from are exactly the documents it parses best.</div>
+        <div class="app-meta">
+          <a href="https://github.com/infiniflow/ragflow">github.com/infiniflow/ragflow &rarr;</a>
+          <span><span class="pill pill-ok">in the catalog</span> <span class="app-lic">Apache-2.0 license</span></span>
+        </div>
+      </div>
+      <div class="app-card">
+        <div class="app-head">
+          <img class="app-logo" src="../assets/apps/openwebui.png" alt="" width="40" height="40">
+          <div><h3>Open WebUI</h3><div class="app-cat">Chat</div></div>
+        </div>
+        <p>A widely deployed self-hosted chat interface with one of the largest communities in the space and a deep plugin ecosystem.</p>
+        <ul>
+          <li>Rich chat UI with tools, pipelines, and model management.</li>
+          <li>Large ecosystem of community extensions.</li>
+          <li>Its license adds branding conditions to a BSD base; it enters the catalog once our license review clears governed redistribution.</li>
+        </ul>
+        <div class="app-why"><div class="k">Why your people will want it</div>A community favorite; we list it under its real terms while the license review runs.</div>
+        <div class="app-meta">
+          <a href="https://github.com/open-webui/open-webui">github.com/open-webui/open-webui &rarr;</a>
+          <span><span class="pill pill-pend">still in development</span> <span class="app-lic">Open WebUI License</span></span>
+        </div>
+      </div>
+      <div class="app-card">
+        <div class="app-head">
+          <img class="app-logo" src="../assets/apps/lobechat.png" alt="" width="40" height="40">
+          <div><h3>LobeChat</h3><div class="app-cat">Chat &amp; agents</div></div>
+        </div>
+        <p>A modern chat workspace with an agent marketplace, plugins, and strong multi-model support.</p>
+        <ul>
+          <li>Polished interface with agents and a plugin marketplace.</li>
+          <li>Broad provider support behind one workspace.</li>
+          <li>Its license adds conditions to an Apache 2.0 base; it enters the catalog once our license review clears governed redistribution.</li>
+        </ul>
+        <div class="app-why"><div class="k">Why your people will want it</div>The agent-workspace experience, listed under its real terms while the license review runs.</div>
+        <div class="app-meta">
+          <a href="https://github.com/lobehub/lobe-chat">github.com/lobehub/lobe-chat &rarr;</a>
+          <span><span class="pill pill-pend">still in development</span> <span class="app-lic">LobeHub Community License</span></span>
         </div>
       </div>
     </div>

@@ -103,7 +103,7 @@ Audited against the vibecoded-design-tells catalog (3.2M-post Reddit analysis) a
 `devibe_scan.py` scanner; current score: 0 findings. Decisions of record:
 
 - **Scroll-reveal animations removed sitewide** (the fade-up-on-every-section pattern is a
-  flagged tell). `site.js` sets the footer year and nothing else. Smooth anchor scrolling
+  flagged tell). `site.js` sets the footer year and nothing else; `search.js` (owner-directed, 2026-08-11) lazy-loads the self-hosted Pagefind overlay and fails open. The hero ticker on home is an owner-directed exception to the animation ban: CSS-only, pauses on hover, static under reduced motion. Smooth anchor scrolling
   honors `prefers-reduced-motion`.
 - **Layout skeleton broken up**: the home page leads with the real console shot, sections
   vary between splits, card grids, a diagram, and steps, and closing CTA bands are
@@ -127,7 +127,7 @@ own content, and no two pages should scan identically (owner-directed; also unsl
 |---|---|
 | Home | Console shot split leading, section variety, dark closing band |
 | Platform | Stack diagram first, numbered rail for what's-in-the-box |
-| Applications | Standard-library splits with in-console mini-cards |
+| Applications | The open-source catalog grid (logos, licenses, status) |
 | Governance | The object chain (connected nodes) + fit-check shot |
 | Deployment | The isolation ladder (stepped rungs) |
 | Security | The site's only dark perimeter band |
@@ -148,3 +148,12 @@ signature intact rather than reverting to the generic card grid.
   hiding pricing entirely damages credibility (rule 6).
 - No em-dashes in body copy (owner preference). Page `<title>` separators are exempt.
 - Buyer-safety filter: see README.
+
+## Owner pass, 2026-08-11 (layout + header)
+
+- Container widened to 1440px with tighter gutters (Databricks-style fullness); text
+  measures keep their researched caps from the spacing system above.
+- Header: nav sits immediately after the brand; the right cluster is language switcher
+  (English only until translations exist), Pagefind search, then Talk to us. Nav collapses
+  to the hamburger below 1080px.
+- Wordmark text raised to 20px. Regenerate search after content edits: npx pagefind --site .

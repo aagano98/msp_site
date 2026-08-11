@@ -178,6 +178,19 @@ h3{letter-spacing:-.01em}
 .pill-pend{color:var(--pend);background:var(--pend-soft)}
 .pill-accent{color:var(--accent);background:var(--accent-soft)}
 .pill-muted{color:var(--ink-2);background:var(--hover)}
+.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.app-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:22px;box-shadow:var(--sh-card);display:flex;flex-direction:column;gap:12px}
+.app-head{display:flex;align-items:center;gap:12px}
+.app-logo{width:40px;height:40px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid var(--divider);padding:4px;flex:0 0 40px}
+.app-head h3{font-size:17px;margin:0}
+.app-cat{font-size:12.5px;color:var(--muted)}
+.app-card>p{color:var(--ink-2);font-size:14.5px;line-height:1.6}
+.app-card ul{padding-left:18px;color:var(--ink-2);font-size:14px;line-height:1.6}
+.app-card ul li{margin-top:4px}
+.app-why{background:var(--accent-soft);border-radius:8px;padding:10px 12px;font-size:14px;line-height:1.55}
+.app-why .k{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:3px}
+.app-meta{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px}
+.app-lic{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
 
 /* stat band */
 .stat-band{
@@ -430,6 +443,7 @@ section.ink .card .k{color:#8fb1f3}
 /* ---------- responsive ---------- */
 @media (max-width:960px){
   .cards,.cards.four{grid-template-columns:repeat(2,1fr)}
+  .app-grid{grid-template-columns:repeat(2,1fr)}
   .stat-band{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr}
   .split{grid-template-columns:1fr;gap:28px}
@@ -463,6 +477,7 @@ section.ink .card .k{color:#8fb1f3}
 }
 @media (max-width:720px){
   .cards,.cards.two,.cards.four{grid-template-columns:1fr}
+  .app-grid{grid-template-columns:1fr}
   .stat-band{grid-template-columns:1fr 1fr}
   .hero{padding:64px 0 44px}
   .page-hero{padding:44px 0 30px}
