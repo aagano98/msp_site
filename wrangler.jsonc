@@ -9,5 +9,6 @@
     "not_found_handling": "404-page"
   },
   "routes": [{ "pattern": "freeholdtech.ai/*", "zone_name": "freeholdtech.ai" }],
-  "workers_dev": false
+  "workers_dev": false,
+  "preview_urls": false
 }
