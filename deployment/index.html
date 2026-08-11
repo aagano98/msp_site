@@ -122,24 +122,30 @@
       <h2>Isolation posture is a configurable ladder.</h2>
       <p>Independent of where models run, you choose how connected the deployment is. Each rung is a real operating mode with its tradeoffs stated up front, so you can hold exactly the line your constraints require.</p>
     </div>
-    <div class="cards">
-      <div class="card">
-        <div class="k">Strictest</div>
-        <h3>Full air gap</h3>
-        <p>No connectivity. For classified, government, and contractually air-gapped environments. Fewest capabilities, strongest guarantee.</p>
-        <span class="pill pill-warn">for mandates that require it</span>
+    <div class="ladder">
+      <div class="rung">
+        <div class="rung-step">Rung 1 · strictest</div>
+        <div>
+          <h3>Air-gapped</h3>
+          <p>No connectivity. For classified, government, and contractually air-gapped environments. Fewest capabilities, strongest guarantee.</p>
+          <span class="pill pill-warn">for mandates that require it</span>
+        </div>
       </div>
-      <div class="card" style="border-color:rgba(46,107,230,.35)">
-        <div class="k">The common case</div>
-        <h3>Controlled egress</h3>
-        <p>Internet-connected, data flow governed. Documents and prompts never leave; only explicitly permitted, logged outbound calls do: user-invoked web search, docs lookups, whitelisted APIs, third-party models under your key.</p>
-        <span class="pill pill-accent">most deployments land here</span>
+      <div class="rung common">
+        <div class="rung-step">Rung 2 · common case</div>
+        <div>
+          <h3>Controlled</h3>
+          <p>Internet-connected, data flow governed. Documents and prompts never leave; only explicitly permitted, logged outbound calls do: user-invoked web search, docs lookups, whitelisted APIs, third-party models under your key.</p>
+          <span class="pill pill-accent">most deployments land here</span>
+        </div>
       </div>
-      <div class="card">
-        <div class="k">Most connected</div>
-        <h3>Connected</h3>
-        <p>Fully connected, for cost-driven buyers with no residency mandate. Still governed: the gateway, budgets, and audit apply to every call regardless.</p>
-        <span class="pill pill-ok">lightest to operate</span>
+      <div class="rung">
+        <div class="rung-step">Rung 3 · most open</div>
+        <div>
+          <h3>Connected</h3>
+          <p>Fully connected, for cost-driven buyers with no residency mandate. Still governed: the gateway, budgets, and audit apply to every call regardless.</p>
+          <span class="pill pill-ok">lightest to operate</span>
+        </div>
       </div>
     </div>
   </div>
@@ -169,15 +175,13 @@
   </div>
 </section>
 
-<div class="cta-band">
-  <div class="wrap">
-    <div class="eyebrow">Next step</div>
-    <h2>Posture-mapping is part of the product.</h2>
-    <p>Bring your constraints (residency, budget, existing spend, appetite for hardware) and we'll map your workloads to postures on your numbers.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Deployment%20postures">Talk to us</a>
-      <a class="btn btn-ghost" href="/economics/">Read the economics</a>
+<div class="closer">
+  <div class="wrap closer-inner">
+    <div>
+      <h3>Posture-mapping is part of the product.</h3>
+      <p>Bring your constraints (residency, budget, existing spend, appetite for hardware) and we'll map your workloads to postures on your numbers.</p>
     </div>
+    <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Deployment%20postures">Talk to us</a>
   </div>
 </div>
 

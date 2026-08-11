@@ -114,6 +114,28 @@ Audited against the vibecoded-design-tells catalog (3.2M-post Reddit analysis) a
 
 - https://github.com/JCarterJohnson/vibecoded-design-tells
 
+## 9. Page differentiation (no stamped template)
+
+Shared tokens, distinct structures. Every page owns one signature layout that expresses its
+own content, and no two pages should scan identically (owner-directed; also unslop tell #10,
+"every section the same weight"):
+
+| Page | Signature structure |
+|---|---|
+| Home | Console shot split leading, section variety, dark closing band |
+| Platform | Stack diagram first, numbered rail for what's-in-the-box |
+| Applications | Standard-library splits with in-console mini-cards |
+| Governance | The object chain (connected nodes) + fit-check shot |
+| Deployment | The isolation ladder (stepped rungs) |
+| Security | The site's only dark perimeter band |
+| Economics | Ruled compare columns + the utilization chart |
+| Pricing | The bill-of-materials document |
+| Solutions / FAQ / Company | Editorial splits / accordion / definition block |
+
+The dark `.cta-band` is reserved for home and company; interior pages end with the compact
+`.closer`. When adding a page, give it its own structure; when editing one, keep its
+signature intact rather than reverting to the generic card grid.
+
 ## House copy rules (owner + philosophy)
 
 - Headlines lead positive: say what arrives. Negation may support inside body text; it may

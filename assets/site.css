@@ -347,6 +347,66 @@ tr:last-child td{border-bottom:none}
 }
 .foot-legal a{color:rgba(255,255,255,.55)}
 
+/* ---------- per-page signature components ----------
+   Each page gets one structure that expresses its own content; these exist so
+   pages stop sharing a single stamped rhythm. Use each on its page only. */
+
+/* object chain — governance: people → groups → applications → models */
+.chain{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:14px;overflow:visible;background:var(--surface);box-shadow:var(--sh-card)}
+.chain-node{padding:28px 26px;border-right:1px solid var(--divider);position:relative}
+.chain-node:last-child{border-right:none}
+.chain-node .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.chain-node h3{font-size:17px;font-weight:650;margin-bottom:8px}
+.chain-node p{font-size:14px;color:var(--ink-2);line-height:1.6}
+.chain-node::after{content:"→";position:absolute;right:-14px;top:26px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;z-index:2}
+.chain-node:last-child::after{content:none}
+
+/* isolation ladder — deployment: rungs step inward as connectivity opens */
+.ladder{max-width:840px}
+.rung{display:flex;gap:26px;align-items:flex-start;padding:26px 28px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-card);margin-bottom:16px}
+.rung-step{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);flex:0 0 104px;padding-top:4px}
+.rung h3{font-size:17.5px;font-weight:650;margin-bottom:6px}
+.rung p{font-size:14.5px;color:var(--ink-2);margin-bottom:10px}
+.rung.common{border-color:rgba(46,107,230,.4);background:linear-gradient(180deg,var(--accent-soft),var(--surface))}
+.rung:nth-child(2){margin-left:44px}
+.rung:nth-child(3){margin-left:88px}
+
+/* bill-of-materials document — pricing: the table styled as the thing it describes */
+.bom{border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:var(--sh-card);overflow:hidden}
+.bom-head{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);padding:14px 24px;border-bottom:1px solid var(--border);background:var(--canvas);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.bom .tbl-scroll{border:none;border-radius:0;box-shadow:none}
+
+/* perimeter band — security's dark section, the only ink-background section on the site */
+section.ink{background:var(--ink);border-top:none;border-bottom:none}
+section.ink h2{color:#fff}
+section.ink .sec-head p{color:rgba(255,255,255,.72)}
+section.ink .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);box-shadow:none}
+section.ink .card:hover{border-color:rgba(255,255,255,.3)}
+section.ink .card h3{color:#fff}
+section.ink .card p{color:rgba(255,255,255,.72)}
+section.ink .card .k{color:#8fb1f3}
+
+/* numbered rail — platform's what's-in-the-box, rows instead of boxes */
+.rail{border-top:1px solid var(--border)}
+.rail-row{display:grid;grid-template-columns:110px 1fr auto;gap:30px;align-items:start;padding:32px 4px;border-bottom:1px solid var(--border)}
+.rail-num{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.1em;padding-top:5px}
+.rail-row h3{font-size:19px;font-weight:650;margin-bottom:8px}
+.rail-row p{color:var(--ink-2);font-size:15px;max-width:62ch}
+.rail-row .foot-link{white-space:nowrap;padding-top:4px}
+
+/* ruled compare columns — economics' three sources, no boxes */
+.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
+.compare-col{border-top:3px solid var(--accent);padding-top:20px}
+.compare-col .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.compare-col h3{font-size:18px;font-weight:650;margin-bottom:8px}
+.compare-col p{font-size:14.5px;color:var(--ink-2)}
+
+/* compact closer — interior pages end here; the dark band is reserved for home + company */
+.closer{border-top:1px solid var(--border);background:var(--surface);padding:64px 0}
+.closer-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.closer h3{font-size:22px;letter-spacing:-.015em;font-weight:700}
+.closer p{color:var(--ink-2);font-size:15px;margin-top:6px;max-width:58ch}
+
 /* ---------- responsive ---------- */
 @media (max-width:960px){
   .cards,.cards.four{grid-template-columns:repeat(2,1fr)}
@@ -354,6 +414,14 @@ tr:last-child td{border-bottom:none}
   .steps{grid-template-columns:1fr}
   .split{grid-template-columns:1fr;gap:28px}
   .foot-grid{grid-template-columns:1fr 1fr}
+  .chain{grid-template-columns:1fr}
+  .chain-node{border-right:none;border-bottom:1px solid var(--divider)}
+  .chain-node:last-child{border-bottom:none}
+  .chain-node::after{content:"↓";right:auto;left:26px;top:auto;bottom:-14px}
+  .chain-node:last-child::after{content:none}
+  .rung:nth-child(2),.rung:nth-child(3){margin-left:0}
+  .compare{grid-template-columns:1fr;gap:28px}
+  .rail-row{grid-template-columns:1fr;gap:8px}
 }
 @media (max-width:720px){
   .cards,.cards.two,.cards.four{grid-template-columns:1fr}
