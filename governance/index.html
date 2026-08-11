@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://freeholdtech.ai/governance/">
 <link rel="canonical" href="https://freeholdtech.ai/governance/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='7' fill='%232e6be6'/%3E%3Crect x='7' y='6.5' width='14' height='4.5' rx='1.5' fill='white'/%3E%3Crect x='7' y='12.5' width='4.5' height='9' rx='1.5' fill='white'/%3E%3Crect x='13' y='12.5' width='6.5' height='4' rx='1.5' fill='white'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/site.css?v=4">
+<link rel="stylesheet" href="../assets/site.css?v=5">
 </head>
 <body>
 
@@ -19,7 +19,6 @@
   <div class="wrap header-inner">
     <a class="wordmark" href="../"><svg class="brand-tile" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--accent)"/><rect x="7" y="6.5" width="14" height="4.5" rx="1.5" fill="#fff"/><rect x="7" y="12.5" width="4.5" height="9" rx="1.5" fill="#fff"/><rect x="13" y="12.5" width="6.5" height="4" rx="1.5" fill="#fff"/></svg>Freehold</a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
-    <label for="nav-toggle" class="nav-toggle-label"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="#101828" stroke-width="1.8" stroke-linecap="round"/></svg></label>
     <nav class="main-nav" aria-label="Main">
       <ul>
         <li class="has-sub">
@@ -37,9 +36,17 @@
         <li><a href="../faq/">FAQ</a></li>
         <li><a href="../pricing/">Pricing</a></li>
         <li><a href="../company/">Company</a></li>
-        <li><a class="nav-cta" href="mailto:hello@freeholdtech.ai?subject=Freehold%20deployment">Talk to us</a></li>
       </ul>
     </nav>
+    <div class="header-tools">
+      <details class="lang-menu">
+        <summary aria-label="Language: English"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="7.5"/><ellipse cx="10" cy="10" rx="3.4" ry="7.5"/><path d="M2.8 7.5h14.4M2.8 12.5h14.4"/></svg>EN</summary>
+        <ul class="lang-list"><li><a href="./" aria-current="true">English</a></li></ul>
+      </details>
+      <button class="search-btn" type="button" data-search-open aria-label="Search the site"><svg width="15" height="15" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="9" r="6"/><path d="M13.5 13.5L18 18" stroke-linecap="round"/></svg><span class="sb-label">Search</span></button>
+      <a class="nav-cta" href="mailto:hello@freeholdtech.ai?subject=Freehold%20deployment">Talk to us</a>
+      <label for="nav-toggle" class="nav-toggle-label"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="#101828" stroke-width="1.8" stroke-linecap="round"/></svg></label>
+    </div>
   </div>
 </header>
 
@@ -243,5 +250,9 @@
 </footer>
 
 <script src="../assets/site.js?v=3"></script>
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel"><div id="search-box"></div></div>
+</div>
+<script src="../assets/search.js?v=1" defer></script>
 </body>
 </html>
