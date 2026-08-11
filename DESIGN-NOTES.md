@@ -128,7 +128,7 @@ own content, and no two pages should scan identically (owner-directed; also unsl
 | Home | Console shot split leading, section variety, dark closing band |
 | Platform | Stack diagram first, numbered rail for what's-in-the-box |
 | Applications | The open-source catalog grid (logos, licenses, status) |
-| Governance | The object chain (connected nodes) + fit-check shot |
+| Governance | The object chain (connected nodes) + fit-check shot + applied-change record |
 | Deployment | The isolation ladder (stepped rungs) |
 | Security | The site's only dark perimeter band |
 | Economics | Ruled compare columns + the utilization chart |

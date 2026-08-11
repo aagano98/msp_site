@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://freeholdtech.ai/governance/">
 <link rel="canonical" href="https://freeholdtech.ai/governance/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='7' fill='%232e6be6'/%3E%3Crect x='7' y='6.5' width='14' height='4.5' rx='1.5' fill='white'/%3E%3Crect x='7' y='12.5' width='4.5' height='9' rx='1.5' fill='white'/%3E%3Crect x='13' y='12.5' width='6.5' height='4' rx='1.5' fill='white'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/site.css?v=6">
+<link rel="stylesheet" href="../assets/site.css?v=7">
 </head>
 <body>
 
@@ -194,6 +194,37 @@
       <li>Physics is measured and policy is declared: an admin sets budgets, caps, and grants, while capacity numbers arrive from measurement. The console keeps you from ever typing a guess into a fact's field.</li>
       <li>True names everywhere: models and applications appear as themselves, because you're trusted to know what a model is.</li>
     </ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <div class="eyebrow">The applied-change record</div>
+        <h3>Every action is a configuration change, versioned and signed.</h3>
+        <p>Changing a model, granting a group, raising a cap: each lands as a signed change with a diff, an author, and an applied timestamp, and the deployment loop carries it fleet-wide in seconds.</p>
+        <p>The history reads like a ledger. Rollback is a change like any other, and the same record that satisfies an auditor explains last Tuesday to your own team.</p>
+      </div>
+      <div>
+        <div class="change-rec" role="img" aria-label="An applied configuration change: a model swap, declared, signed, and applied fleet-wide in eleven seconds">
+          <div class="cr-head"><span class="cr-title">Change #147 · applications/librechat</span><span class="pill pill-ok">applied</span></div>
+          <div class="cr-steps">
+            <div><div class="cr-k">Declared</div><div class="cr-v">14:02:11 · aaron@</div></div>
+            <div><div class="cr-k">Signed</div><div class="cr-v">14:02:11 · sha256 &#10003;</div></div>
+            <div><div class="cr-k cr-on">Applied</div><div class="cr-v">14:02:22 · fleet-wide</div></div>
+          </div>
+          <div class="cr-diff">
+            <div class="cr-ctx">applications:</div>
+            <div class="cr-ctx">&nbsp;&nbsp;librechat:</div>
+            <div class="cr-del">-&nbsp;&nbsp;&nbsp;model: llama-3.1-70b</div>
+            <div class="cr-add">+&nbsp;&nbsp;&nbsp;model: llama-3.3-70b</div>
+            <div class="cr-ctx">&nbsp;&nbsp;&nbsp;&nbsp;groups: [all]</div>
+          </div>
+          <div class="cr-foot"><span>Versioned, signed, and auditable. Content never recorded.</span><span>11 seconds, declared to applied</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
