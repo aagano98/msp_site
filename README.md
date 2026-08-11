@@ -32,6 +32,11 @@ robots.txt, sitemap.xml
 Header/footer are duplicated per page by design (no build step). When editing nav or footer,
 apply the same change to every `index.html`.
 
+Internal links are relative (`../platform/`, `../assets/site.css?v=2`), so pages render
+correctly over HTTP and when opened directly as files. `404.html` keeps root-relative links
+because the host serves it at arbitrary paths. When `site.css` or `site.js` changes, bump
+the `?v=` query on the asset links in every page so cached browsers pick up the new file.
+
 ## Content rules
 
 Copy is buyer-facing and drawn from two sources in `gpu_msp_product`: commercial facts
