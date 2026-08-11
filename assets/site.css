@@ -32,7 +32,7 @@ a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .mono{font-family:var(--mono)}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 44px}
 
 /* ---------- header ---------- */
 .site-header{
@@ -72,7 +72,7 @@ a:hover{text-decoration:underline}
 .nav-toggle-label svg{display:block}
 
 /* ---------- hero ---------- */
-.hero{position:relative;padding:128px 0 96px;overflow:hidden}
+.hero{position:relative;padding:128px 0 80px;overflow:hidden}
 .hero-bg{
   position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:
@@ -112,6 +112,9 @@ h1 .dim{color:var(--muted)}
 
 /* ---------- sections ---------- */
 section{padding:112px 0}
+/* the section directly after a hero starts sooner — hero bottom padding and section
+   top padding otherwise stack into a dead zone */
+.hero+section,.page-hero+section{padding-top:72px}
 section.alt{background:var(--surface);border-top:1px solid var(--divider);border-bottom:1px solid var(--divider)}
 .sec-head{margin-bottom:56px;max-width:720px}
 .sec-head.centered{margin-left:auto;margin-right:auto;text-align:center}
@@ -310,7 +313,7 @@ tr:last-child td{border-bottom:none}
 .definition .sense em{color:var(--accent);font-style:normal}
 
 /* page hero (interior pages) */
-.page-hero{padding:96px 0 72px;position:relative;overflow:hidden}
+.page-hero{padding:96px 0 56px;position:relative;overflow:hidden}
 .page-hero h1{font-size:clamp(30px,4.4vw,44px)}
 .page-hero .hero-sub{font-size:17.5px}
 .crumbs{font-size:13px;color:var(--muted);margin-bottom:18px;font-family:var(--mono)}
@@ -424,11 +427,13 @@ section.ink .card .k{color:#8fb1f3}
   .rail-row{grid-template-columns:1fr;gap:8px}
 }
 @media (max-width:720px){
+  .wrap{padding:0 22px}
   .cards,.cards.two,.cards.four{grid-template-columns:1fr}
   .stat-band{grid-template-columns:1fr 1fr}
-  .hero{padding:88px 0 64px}
-  .page-hero{padding:72px 0 52px}
+  .hero{padding:88px 0 56px}
+  .page-hero{padding:72px 0 44px}
   section{padding:72px 0}
+  .hero+section,.page-hero+section{padding-top:56px}
   .split{margin-bottom:64px}
   .layer{flex-direction:column;align-items:flex-start;gap:8px}
   .shot-side{display:none}
