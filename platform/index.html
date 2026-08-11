@@ -119,26 +119,26 @@
   <div class="wrap">
     <div class="sec-head">
       <h2>A model menu tiered to what the hardware can serve.</h2>
-      <p>The models on the menu and the models loaded in GPU memory, ready to answer instantly, are two different numbers, and VRAM sets the ceiling. The menu is tiered around that fact, with each tier's response behavior disclosed before anyone selects it.</p>
+      <p>The models on the menu and the models loaded in GPU memory, ready to answer instantly, are two different numbers, and VRAM sets the ceiling. The menu is tiered around that fact, with each tier's response behavior disclosed before anyone selects it, and every hosted model shows its capacity with provenance: an industry-benchmark estimate at first, then a number measured on your own hardware.</p>
     </div>
     <div class="tbl-scroll">
       <table>
         <thead><tr><th>Tier</th><th>What it is</th><th>What you're promised</th></tr></thead>
         <tbody>
           <tr>
-            <td>Workhorse set</td>
-            <td>A small set of open-weight models kept hot in GPU memory, each selected for a job: everyday chat, retrieval, coding.</td>
-            <td>Fast-response guarantee. These answer instantly, always.</td>
+            <td>Hot</td>
+            <td>Pinned in GPU memory, occupying its footprint continuously. The tier for everyday chat, retrieval, and coding models.</td>
+            <td>Answers instantly, always.</td>
           </tr>
           <tr>
-            <td>On-demand tail</td>
-            <td>A wider set of specialized models available from the local cache, loaded when called.</td>
-            <td>An explicit first-call delay, disclosed up front in the console before anyone selects the model.</td>
+            <td>Available</td>
+            <td>Loaded on demand from the local cache, freeing its capacity while idle. The tier for the specialized tail.</td>
+            <td>A stated first-call wait, disclosed in the console before anyone selects the model.</td>
           </tr>
           <tr>
-            <td>Governed third-party</td>
-            <td>Frontier and hosted open models reached through your gateway under your own keys, with per-person allowances.</td>
-            <td>Everything outside the local set, with the data boundary labelled and every call in the audit trail.</td>
+            <td>External, under your keys</td>
+            <td>Frontier and hosted open models reached through your gateway, with per-person allowances.</td>
+            <td>Capacity taken from the provider's own rate limit, with the data boundary labelled and every call in the audit trail.</td>
           </tr>
         </tbody>
       </table>

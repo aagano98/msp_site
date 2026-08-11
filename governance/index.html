@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Governance &amp; console — Built for IT generalists | Freehold</title>
-<meta name="description" content="The Freehold console is built for the administrator who runs Google Workspace or M365: config-only control, per-person budgets, a content-free audit trail, and honest numbers with labelled provenance. No Kubernetes, ever.">
-<meta property="og:title" content="Freehold Governance — Run AI like you run Google Workspace">
-<meta property="og:description" content="Config-only control, per-person budgets, content-free audit, and honest numbers. Built for IT generalists, not ML engineers.">
+<meta name="description" content="The Freehold console speaks in people, groups, applications, and models, translates GPU physics into human terms, and shows every number with its provenance. Config-only control, budgets enforced at the gateway, and a content-free audit.">
+<meta property="og:title" content="Freehold Governance — Run AI in the language you already speak">
+<meta property="og:description" content="People, groups, applications, models. Honest numbers with provenance, budgets enforced at the gateway, and a content-free audit. Built for IT generalists.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://freeholdtech.ai/governance/">
 <link rel="canonical" href="https://freeholdtech.ai/governance/">
@@ -49,7 +49,7 @@
     <div class="crumbs"><a href="/">Home</a> / Governance &amp; console</div>
     <div class="eyebrow">Governance &amp; Console</div>
     <h1>Built for the person who runs everything else.</h1>
-    <p class="hero-sub">The Freehold console is designed for the IT administrator who runs Google Workspace, Okta, or the M365 admin center: an admin surface a generalist operates with confidence, because every screen answers a question their manager actually asks.</p>
+    <p class="hero-sub">The Freehold console is designed for the IT administrator who runs Google Workspace, Okta, or the M365 admin center. It speaks in people, groups, applications, and alerts, and it translates the GPU physics into human terms, so a generalist can answer their manager's questions on the spot.</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Console%20walkthrough">Request a walkthrough</a>
       <a class="btn btn-ghost" href="/security/">The enforcement underneath</a>
@@ -60,40 +60,33 @@
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <h2>The console answers five questions.</h2>
-      <p>Infrastructure concepts stay out of the navigation. Each surface answers one of the five questions leadership asks the person running it:</p>
+      <h2>Four objects carry the whole mental model.</h2>
+      <p>People belong to groups. Groups are permitted applications. Applications point at models. Everything the console governs hangs off that chain, in the vocabulary your team already uses.</p>
     </div>
-    <div class="cards">
+    <div class="cards four">
       <div class="card">
-        <div class="k">Overview</div>
-        <h3>"Is everything OK?"</h3>
-        <p>One honest page: system health, what's reconciled, what changed recently, and anything that needs a decision. When it shows green, the system measured green.</p>
+        <div class="k">People</div>
+        <h3>Budgets and allowances</h3>
+        <p>Federated from your identity provider. Each person carries a per-minute budget and, where you allow external models, a windowed allowance. Consumption is metered individually.</p>
       </div>
       <div class="card">
-        <div class="k">People &amp; access</div>
-        <h3>"Who can use what?"</h3>
-        <p>Members, groups, and roles federated from your identity provider. Per-person budgets. Offboard someone and prove it happened, in one place.</p>
+        <div class="k">Groups</div>
+        <h3>Where policy lives</h3>
+        <p>A group is a governance scope: which applications are permitted, aggregate caps, and how consumption divides among members. The org chart stays an org chart; groups govern usage.</p>
       </div>
       <div class="card">
         <div class="k">Applications</div>
-        <h3>"What are we offering?"</h3>
-        <p>The deployed catalog and the shelf: every app under its real name, with its assigned model and its sovereignty score in plain view.</p>
+        <h3>Named, versioned products</h3>
+        <p>Real products from the catalog, publisher-labelled and updated across the fleet, each pointing at the model that powers it. The console shows each app's observed adoption next to its status.</p>
       </div>
       <div class="card">
-        <div class="k">Capacity &amp; usage</div>
-        <h3>"Are we sized right?"</h3>
-        <p>What's hot, what's queued, who's using what, and where the load is trending, measured from the same metering that enforces budgets.</p>
+        <div class="k">Models</div>
+        <h3>Hosted, or under your key</h3>
+        <p>Hosted models come from the curated menu and occupy measured capacity. External models run under your own provider keys through the same gateway, with the data boundary labelled.</p>
       </div>
-      <div class="card">
-        <div class="k">Safety &amp; evidence</div>
-        <h3>"Are we safe, and what changed?"</h3>
-        <p>Egress posture, data-boundary labels per app, and the complete audit trail, assembled so you can hand it to an auditor as it stands.</p>
-      </div>
-      <div class="card" style="background:var(--accent-soft);border-color:rgba(46,107,230,.3)">
-        <div class="k">Design principle</div>
-        <h3>Measured against real jobs</h3>
-        <p>The console is designed and tested against the concrete jobs a generalist must complete unaided: onboard a team, handle "the AI is slow," offboard a person and prove it, pass an audit, absorb new hardware.</p>
-      </div>
+    </div>
+    <div class="callout">
+      <p><strong>The split that keeps sizing sane:</strong> granting an application to a group costs nothing, hosting a model occupies real GPU capacity, and each person's consumption is metered. The console keeps the three apart, so an access decision never masquerades as a capacity decision.</p>
     </div>
   </div>
 </section>
@@ -102,27 +95,27 @@
   <div class="wrap">
     <div class="split">
       <div class="txt">
-        <div class="eyebrow">Config-only control</div>
-        <h3>Every action is a configuration change.</h3>
-        <p>The admin console only ever writes configuration. It never reaches into the live system, and neither do you:</p>
+        <div class="eyebrow">Decisions, previewed</div>
+        <h3>Every choice arrives with its consequences computed.</h3>
+        <p>The console offers decisions with the outcome attached, and it only offers options that fit:</p>
         <ul>
-          <li>Propose, review, apply. Every change shows exactly what it will do before it applies. No surprise blast radius.</li>
-          <li>Versioned and signed. The configuration history is the audit trail: who changed what, when, and what the system looked like before.</li>
-          <li>Reconciled continuously. A proven GitOps engine holds the running system to its declared state. Anything tampered with is automatically restored.</li>
-          <li>Structurally enforced. "Admins can only write config" is proven by automated tests at the web layer.</li>
+          <li>Hosting a model answers both capacity questions in one dialog: does it fit, measured in GPU-units, and will it hold up, measured in throughput.</li>
+          <li>Every change previews its effect in plain language before it applies, then lands as versioned, signed configuration that the platform reconciles continuously.</li>
+          <li>A refused action explains itself and names the alternatives that would work.</li>
         </ul>
+        <p>The screens are designed as golden paths for the jobs you'll actually do: give a team an AI application, handle "the AI is slow," handle "we need model Y," offboard a person and prove it, pass an audit.</p>
       </div>
       <div>
-        <div class="shot" role="img" aria-label="Illustration of a change review in the Freehold console">
-          <div class="shot-top"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-url">console · review change</span></div>
+        <div class="shot" role="img" aria-label="Illustration of the console's two-question hosting preview">
+          <div class="shot-top"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-url">console · host a model · preview</span></div>
           <div class="shot-body">
             <div class="shot-main" style="background:var(--surface)">
-              <div class="shot-h">Review change</div>
-              <div class="shot-sub">Proposed by j.rivera · applies on approval</div>
-              <div class="shot-row"><div><div class="rn">Coding assistant → model</div><div class="rd">workhorse-med → workhorse-large</div></div><span class="pill pill-pend">change</span></div>
-              <div class="shot-row"><div><div class="rn">Engineering group → budget</div><div class="rd">monthly allowance raised</div></div><span class="pill pill-pend">change</span></div>
-              <div class="shot-row"><div><div class="rn">Egress posture</div><div class="rd">unchanged · controlled egress</div></div><span class="pill pill-ok">unchanged</span></div>
-              <div class="shot-note">signed on apply · reverted automatically if the live system drifts</div>
+              <div class="shot-h">Host Qwen2.5-Coder-32B</div>
+              <div class="shot-sub">Preview · applies only on your approval</div>
+              <div class="shot-row"><div><div class="rn">Does it fit?</div><div class="rd">footprint 1 GPU-unit · 2 free in the serving pool</div></div><span class="pill pill-ok">fits</span></div>
+              <div class="shot-row"><div><div class="rn">Will it hold up?</div><div class="rd">capacity ≈ 1,900 tok/s · about 40 people comfortably</div></div><span class="pill pill-info">estimate</span></div>
+              <div class="shot-row"><div><div class="rn">Effect on grants</div><div class="rd">committed demand 0.8× of capacity · within margin</div></div><span class="pill pill-ok">within margin</span></div>
+              <div class="shot-note">estimate labelled until measured on your hardware · consequences computed before apply</div>
             </div>
           </div>
         </div>
@@ -134,25 +127,28 @@
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <h2>Budgets that enforce themselves.</h2>
-      <p>The Freehold gateway sits in front of every model call, in every posture, and enforces before serving. Control happens ahead of the spend, while there's still something to decide.</p>
+      <h2>Enforcement is a cap at the gateway.</h2>
+      <p>When a request would exceed its limits, the gateway declines it before any model sees it, with a message that explains. Simple to reason about, visible in the audit, and free of scheduler mysteries.</p>
     </div>
     <div class="cards">
       <div class="card">
         <div class="k">Per-person budgets</div>
-        <h3>Enforced at the gateway</h3>
-        <p>Every request is checked against the member's budget before a model sees it. Usage totals accumulate from the same audit stream your reports read: one number, one source of truth.</p>
+        <h3>Enforced before serving</h3>
+        <p>Requests and tokens per minute, checked at the gateway on every call. Group-level caps aggregate the same mechanism. Usage totals accumulate from the same audit stream your reports read.</p>
       </div>
       <div class="card">
-        <div class="k">Frontier allowances</div>
-        <h3>Spend caps with graceful fallback</h3>
-        <p>Give a group frontier access under your own key, capped by a per-person allowance. When it's spent, the app falls back automatically to a local model, so work continues while the spend stays inside the cap.</p>
+        <div class="k">Allowances</div>
+        <h3>Premium while it lasts, sovereign after</h3>
+        <p>Route a group to a frontier model under your own key, capped by a per-person windowed allowance. When it's spent, the app falls back automatically to your hosted model and the data-boundary label updates to match.</p>
       </div>
       <div class="card">
-        <div class="k">Metering</div>
-        <h3>The numbers that decide posture</h3>
-        <p>The same metering that enforces budgets measures your real demand shape, which is exactly what the on-prem-versus-API decision needs. Your posture recommendations come from your own numbers.</p>
+        <div class="k">Promise, meet observation</div>
+        <h3>Committed next to observed</h3>
+        <p>For every model, the console pairs the demand you've committed through grants with the peak actually observed. Right-sizing becomes something you read off the screen, per model, per group.</p>
       </div>
+    </div>
+    <div class="callout">
+      <p><strong>Hard guarantees come from walls.</strong> A group that needs physical isolation or a strict latency promise gets a dedicated model instance of its own. Shared serving stays governed by caps your team can read at a glance.</p>
     </div>
   </div>
 </section>
@@ -163,7 +159,7 @@
       <div class="txt">
         <div class="eyebrow">The audit trail</div>
         <h3>Content-free by construction.</h3>
-        <p>Every model call writes an audit line: identity, application, model, decision, timestamp, token counts. Message content is never recorded, and the audit layer is built without a place for it to go.</p>
+        <p>Every model call writes an audit line: identity, group, application, model, decision, timestamp, token counts. Message content is never recorded, and the audit layer is built without a place for it to go.</p>
         <p>A compliance officer can sign off on that: complete enough to answer "who used what, when, and how much," and structurally incapable of becoming a surveillance log of what your employees wrote.</p>
         <a class="foot-link" href="/security/">More on the data boundary →</a>
       </div>
@@ -180,15 +176,16 @@
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <h2>Honesty is a feature of the interface.</h2>
-      <p>Admin consoles routinely invent certainty. Ours is built against stated principles that treat you as the adult in the room:</p>
+      <h2>Numbers you can take to a meeting.</h2>
+      <p>GPU tools love bare percentages. The console shows where every number comes from and what it's made of:</p>
     </div>
     <ul class="checks" style="max-width:760px">
-      <li>Every number carries its provenance. Measured, derived, or declared, labelled on screen. An estimate says it's an estimate.</li>
-      <li>A quantity we can't measure renders as a labelled absence, with the gap stated on screen.</li>
-      <li>True names are mandatory. Models and applications appear under their real names, because you're trusted to know what a model is.</li>
-      <li>The catalog is visibly a catalog. What's deployed is complete, and everything the shelf offers is out in the open.</li>
-      <li>Sovereignty is scored per app. Each application's data boundary is shown as configured: an app routed to an external model visibly reads lower than a pure in-perimeter one.</li>
+      <li>Every number is labelled measured, derived, or declared, and an estimate says so until your own hardware has been measured.</li>
+      <li>Ratios name both of their parts: "load: 62% of measured capacity" is the minimum the console will say, and bare "utilization" figures stay out of it entirely.</li>
+      <li>Capacity reads in human terms, "about 40 people comfortably," with the basis shown alongside.</li>
+      <li>A quantity the system can't yet measure renders as a labelled absence, with the gap stated on screen.</li>
+      <li>Physics is measured and policy is declared: an admin sets budgets, caps, and grants, while capacity numbers arrive from measurement. The console keeps you from ever typing a guess into a fact's field.</li>
+      <li>True names everywhere: models and applications appear as themselves, because you're trusted to know what a model is.</li>
     </ul>
   </div>
 </section>

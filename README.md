@@ -34,10 +34,15 @@ apply the same change to every `index.html`.
 
 ## Content rules
 
-Copy is buyer-facing and drawn from the business case in `gpu_msp_product`
-(`docs/strategy/business-case-v6.md`), filtered: no margins, no internal pricing strategy,
-no team/funding details, no competitive analysis, no unearned claims (certification is
-"built on certified stacks", never "certified" until it is).
+Copy is buyer-facing and drawn from two sources in `gpu_msp_product`: commercial facts
+from the business case (`docs/strategy/business-case-v6.md`) and the console's conceptual
+model from `docs/strategy/user-experience/CONSOLE-REDESIGN-PRINCIPLES.md` (people → groups
+→ applications → models; entitlement/capacity split; measured/derived/declared provenance;
+Hot/Available latency tiers; Air-gapped/Controlled/Connected isolation postures; true
+names). The design/mockups HTML is a styling reference only, never a content source.
+Filtered throughout: no margins, no internal pricing strategy, no team/funding details,
+no competitive analysis, no unearned claims (certification is "built on certified
+stacks", never "certified" until it is).
 
 ## Deploy
 
