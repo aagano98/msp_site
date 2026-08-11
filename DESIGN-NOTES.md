@@ -69,11 +69,55 @@ product's own provenance-labelling principle).
 
 - https://credibility.stanford.edu/guidelines/
 
+## 7. AI-writing tells (banned constructions)
+
+Per Wikipedia's "Signs of AI writing" catalog and the surrounding analysis of contrastive
+negation as an LLM signature, the following are removed on sight from site copy:
+
+- **Contrastive negation**: "it's not X, it's Y", "not X but Y", and trailing "X, not Y"
+  appositions. State the positive claim directly; if the contrast matters, give each side
+  its own full sentence.
+- **Negative parallelism**: defining the product by what it isn't ("No locked features. No
+  per-token margin.") as a rhetorical device, especially in headings and lists.
+- **Punchy fragment pairs**: "Five questions. Five surfaces." / "Three sources. Three cost
+  shapes." Join into one sentence or write two real sentences.
+- **Rhetorical-question headings** ("Not sure which posture fits?") and colon-plus-triad
+  headlines ("The model menu: curated, tiered, and honest").
+- **Bold lead-ins on every bullet** ("**Term.** Explanation" repeated down a list) and
+  gratuitous rule-of-three flourishes.
+- Marketing-puffery vocabulary (seamless, robust, leverage, unlock, elevate, transform,
+  supercharge, effortless, reimagined) stays out entirely.
+
+Exceptions: FAQ questions are questions by nature; concrete factual negations inside body
+text ("message content is never recorded") are statements of system behavior, allowed.
+
+- https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
+- https://olereissmann.com/contrastive-negation-used-to-be-a-rhetorical-device-now-it-screams-i-used-chatgpt/
+
+## 8. AI-design tells (unslop-ui audit)
+
+Audited against the vibecoded-design-tells catalog (3.2M-post Reddit analysis) and its
+`devibe_scan.py` scanner; current score: 0 findings. Decisions of record:
+
+- **Scroll-reveal animations removed sitewide** (the fade-up-on-every-section pattern is a
+  flagged tell). `site.js` sets the footer year and nothing else. Smooth anchor scrolling
+  honors `prefers-reduced-motion`.
+- **Layout skeleton broken up**: the home page leads with the real console shot, sections
+  vary between splits, card grids, a diagram, and steps, and closing CTA bands are
+  left-aligned rather than the template's centered band.
+- **Palette and type are declared choices, not defaults**: both mirror the Bastion product
+  console (`design/mockups` in gpu_msp_product), marked `unslop-ignore` in `site.css` with
+  the rationale (product parity + the no-external-request deploy contract).
+- **Chips and tags are lightly rounded (6px), not pills**; status pills remain because they
+  reproduce the console's own status language.
+- No gradient text, no glow, no emoji-as-icons, no stock illustration.
+
+- https://github.com/JCarterJohnson/vibecoded-design-tells
+
 ## House copy rules (owner + philosophy)
 
-- Headlines lead positive: say what arrives, not what we aren't. Negation is allowed inside
-  body text as support, never as the first thing scanned. (Follows from rule 1: scanners see
-  only the headline.)
+- Headlines lead positive: say what arrives. Negation may support inside body text; it may
+  never be the first thing scanned. (Follows from rule 1: scanners see only the headline.)
 - Pricing never leads: no pricing language in heroes, chips, section leads, or card headers
   outside `/pricing/`. The pricing page stays one click away (nav, after FAQ; footer) because
   hiding pricing entirely damages credibility (rule 6).

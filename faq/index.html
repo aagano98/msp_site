@@ -48,7 +48,7 @@
   <div class="wrap">
     <div class="crumbs"><a href="/">Home</a> / FAQ</div>
     <div class="eyebrow">FAQ</div>
-    <h1>Asked plainly, answered plainly.</h1>
+    <h1>Plain answers to the real questions.</h1>
     <p class="hero-sub">The questions buyers actually ask, including the awkward ones. If yours isn't here, <a href="mailto:hello@freeholdtech.ai?subject=Question">ask it directly</a>: plain answers are a product principle.</p>
   </div>
 </div>
@@ -59,29 +59,29 @@
 
       <h2 style="margin:0 0 18px;font-size:22px">Data &amp; trust</h2>
 
-      <details class="reveal">
+      <details>
         <summary>Can Freehold see our prompts, documents, or data?</summary>
         <div class="a">
-          <p>No, and not as a policy promise: as an architectural property. We operate the control plane (configuration, health, versions, metering) and are structurally unable to read the data plane (prompts, responses, documents, member memory, model weights). Telemetry that leaves your deployment carries control-plane fields only.</p>
+          <p>No. The separation is architectural: we operate the control plane (configuration, health, versions, metering) and are structurally unable to read the data plane (prompts, responses, documents, member memory, model weights). Telemetry that leaves your deployment carries control-plane fields only.</p>
           <p>The same constraint contractually binds our subcontractors: any vendor access is scoped to the control and operations plane, never to your data.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>What exactly is in the audit trail?</summary>
         <div class="a">
           <p>For every model call: identity, application, model, decision, timestamp, and token counts. Message content is never recorded, by construction. That makes the trail complete enough for an auditor ("who used what, when, how much") and structurally incapable of becoming a surveillance log of what your employees wrote.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>Where does the control plane run?</summary>
         <div class="a">
           <p>Inside your perimeter: on your hardware or in your own cloud tenancy, never as a SaaS we host. It holds your keys, your access rules, and your audit trail. Updates are pulled from a mirror inside the boundary on a schedule we gate; nothing is pushed in from outside, by any vendor, including us.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>Can we run fully air-gapped?</summary>
         <div class="a">
           <p>Yes. Isolation is a configurable ladder: full air gap (no connectivity), controlled egress (the common case: data stays in, only explicitly permitted and logged calls go out), or open. Stricter postures carry fewer conveniences and cost more to operate, and we price that honestly.</p>
@@ -90,36 +90,36 @@
 
       <h2 style="margin:36px 0 18px;font-size:22px">Product &amp; models</h2>
 
-      <details class="reveal">
+      <details>
         <summary>Do we need to hire ML or platform engineers?</summary>
         <div class="a">
-          <p>No. That's the founding premise. The console is designed for the IT administrator who runs Google Workspace, Okta, or the M365 admin center, and it's measured against the concrete jobs that person must complete unaided: onboard a team, handle "the AI is slow," offboard a person and prove it, pass an audit. Your team never touches Kubernetes, and there is no kubectl anywhere in your job.</p>
+          <p>No, and the whole product is built on that premise. The console is designed for the IT administrator who runs Google Workspace, Okta, or the M365 admin center, and it's measured against the concrete jobs that person must complete unaided: onboard a team, handle "the AI is slow," offboard a person and prove it, pass an audit. Kubernetes stays on our side of the line.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>Can our teams keep using Claude, GPT, or Gemini?</summary>
         <div class="a">
-          <p>Yes, through the governed third-party posture: frontier providers plug in under your own keys, behind your own gateway, with per-person allowances and the same content-free audit as everything else. When an allowance is spent, the app falls back automatically to a local model. Frontier access becomes something you govern rather than something you either ban or ignore.</p>
+          <p>Yes, through the governed third-party posture: frontier providers plug in under your own keys, behind your own gateway, with per-person allowances and the same content-free audit as everything else. When an allowance is spent, the app falls back automatically to a local model. Frontier access becomes something you govern.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>Which models do we get?</summary>
         <div class="a">
-          <p>A curated menu, not an "any model" wall: a small workhorse set of open-weight models kept hot with a fast-response guarantee, a wider on-demand tail with an explicitly disclosed first-call delay, and governed third-party access for everything else. Models appear under their real names, and the menu is kept current as the frontier moves, through the managed update pipeline.</p>
+          <p>A curated menu: a small workhorse set of open-weight models kept hot with a fast-response guarantee, a wider on-demand tail with an explicitly disclosed first-call delay, and governed third-party access for everything else. Models appear under their real names, and the menu is kept current as the frontier moves, through the managed update pipeline.</p>
           <p>The tiering is honest physics: GPU memory is the real ceiling on what can answer instantly, and we'd rather disclose that than let you discover it mid-rollout.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>Is there an agent builder or low-code canvas?</summary>
         <div class="a">
-          <p>Deliberately not. Builder surfaces are aimed at a technical persona most of our buyers don't employ. Every app in the catalog arrives finished. If you need something we don't stock, we only build apps that belong in the catalog for everyone, and customer-funded builds are one of the ways the catalog grows.</p>
+          <p>No, by design. Builder surfaces are aimed at a technical persona most of our buyers don't employ, so we put that engineering into finished apps instead. If you need something beyond the shelf, customer-funded builds are one of the ways the catalog grows.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>Some of the catalog is adopted open source. What does that mean for us?</summary>
         <div class="a">
           <p>Some catalog applications are proven open-source products we've adopted and integrated: licenses inventoried, notices preserved, branding intact where a license requires it. Two things matter for you:</p>
@@ -132,58 +132,58 @@
 
       <h2 style="margin:36px 0 18px;font-size:22px">Deployment &amp; operations</h2>
 
-      <details class="reveal">
+      <details>
         <summary>What hardware do we have to buy?</summary>
         <div class="a">
           <p>Possibly none. Two of the three postures carry no hardware at all: your workloads can run in your own cloud tenancy or behind governed third-party APIs. If and when your sustained volume justifies owned capacity, we deploy on prebuilt certified enterprise AI systems (the Dell, HPE, and Lenovo AI factory lines), purchased by you, on your balance sheet, from a small set of blessed configurations we operate fleet-wide.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>Who shows up when a GPU dies?</summary>
         <div class="a">
-          <p>The hardware vendor's field service, working as our subcontractor under back-to-back commitments. You hold one SLA, with us; we hold our vendors to response times that let us honor it. You never manage Dell, Red Hat, or NVIDIA as separate support relationships, and none of their access reaches your data plane.</p>
+          <p>The hardware vendor's field service, working as our subcontractor under back-to-back commitments. You hold one SLA, with us; we hold our vendors to response times that let us honor it. We manage Dell, Red Hat, and NVIDIA behind the scenes, and their access stops at the control plane.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>We have no cloud footprint and no data center. Are we disqualified?</summary>
         <div class="a">
-          <p>No. The platform layer needs only modest, GPU-free compute. If you have no cloud presence, we procure and stand up a tenancy in your name as part of onboarding, with ownership landing with you: your tenancy, your keys, your data. "Bring your own cloud maturity" would be a strange prerequisite for a product aimed at companies without a platform team, so it isn't one.</p>
+          <p>No. The platform layer needs only modest, GPU-free compute. If you have no cloud presence, we procure and stand up a tenancy in your name as part of onboarding, with ownership landing with you: your tenancy, your keys, your data. A missing cloud footprint is an onboarding step for us, and ownership still lands with you.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>How do updates work?</summary>
         <div class="a">
-          <p>Every update, platform, models, and applications, is validated against real workloads before your fleet takes it, then delivered through a signed release path and pulled from inside your perimeter on a schedule we gate. Drift between the running system and its declared configuration is detected and automatically reverted. Your team's involvement: zero, unless you've asked to gate specific windows.</p>
+          <p>Every update, platform, models, and applications, is validated against real workloads before your fleet takes it, then delivered through a signed release path and pulled from inside your perimeter on a schedule we gate. Drift between the running system and its declared configuration is detected and automatically reverted. Your team stays out of it unless you've asked to gate specific windows.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>What happens if we leave?</summary>
         <div class="a">
-          <p>You keep what's yours, which is most of it: the hardware is on your balance sheet, the cloud tenancy is in your name, the keys are yours, and your data never left your perimeter to begin with. Adopted open-source applications remain licensed to run. What you lose is us: the governance layer, the catalog updates, and the operations. Exit is a real conversation we'll have before you sign, not after.</p>
+          <p>You keep what's yours, which is most of it: the hardware is on your balance sheet, the cloud tenancy is in your name, the keys are yours, and your data never left your perimeter to begin with. Adopted open-source applications remain licensed to run. What you lose is us: the governance layer, the catalog updates, and the operations. Exit is a conversation we'll have with you before you sign.</p>
         </div>
       </details>
 
       <h2 style="margin:36px 0 18px;font-size:22px">Commercial</h2>
 
-      <details class="reveal">
+      <details>
         <summary>How is Freehold priced?</summary>
         <div class="a">
           <p>A base deployment subscription (standard apps + governance + operations, with a per-seat governance license), per-app add-on subscriptions priced individually on the shelf, a one-time fixed-scope onboarding fee, and pass-throughs (hardware, the NVIDIA AI Enterprise entitlement, third-party model usage under your keys) visible at their real rates. The fee is the same in every posture, and we take no per-token margin. Details on the <a href="/pricing/">pricing page</a>.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>Why not just buy the certified hardware and run it ourselves?</summary>
         <div class="a">
-          <p>If you have a platform team that wants to own model serving, GPU scheduling, upgrade gating, egress policy, and 24/7 on-call, that's a legitimate path, and the hardware vendors will happily sell it to you. Most of our customers don't have that team and never will. What they'd have to hire, we operate: and because we run a whole fleet, our operating cost per deployment keeps falling in a way a single self-hosted cluster's never does.</p>
+          <p>If you have a platform team that wants to own model serving, GPU scheduling, upgrade gating, egress policy, and 24/7 on-call, that's a legitimate path, and the hardware vendors will happily sell it to you. Most of our customers don't have that team and never will. What they'd have to hire, we operate, and because we run a whole fleet, our operating cost per deployment keeps falling while a single self-hosted cluster pays its full cost alone.</p>
         </div>
       </details>
 
-      <details class="reveal">
+      <details>
         <summary>Where is Freehold in its life as a company?</summary>
         <div class="a">
           <p>Early, and we'd rather you hear it from us. The governance core, gateway, and console are built and fault-tested, and we're deploying with a small number of design partners now. What early buys you: direct access to the team that builds the product, catalog priorities steered by your needs, and design-partner terms. If you need a vendor with a decade of logos, we're not that yet, and we won't pretend otherwise.</p>
@@ -195,8 +195,8 @@
 </section>
 
 <div class="cta-band">
-  <div class="wrap reveal">
-    <div class="eyebrow centered">Still curious?</div>
+  <div class="wrap">
+    <div class="eyebrow">Still curious?</div>
     <h2>Ask the question the FAQ didn't answer.</h2>
     <p>Plain answers, from the people building it.</p>
     <div class="hero-ctas">

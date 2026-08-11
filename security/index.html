@@ -59,12 +59,12 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>What we operate. What we can never see.</h2>
-      <p>We operate the control plane and are architecturally unable to read the data plane. That separation is what makes "we run the plumbing, we never see your data" literally true rather than aspirational, and it contractually binds our subcontractors as well as us.</p>
+    <div class="sec-head">
+      <h2>What we operate, and what we can never see.</h2>
+      <p>We operate the control plane and are architecturally unable to read the data plane. That separation is what makes "we run the plumbing, we never see your data" literally true, and it contractually binds our subcontractors as well as us.</p>
     </div>
     <div class="cards two">
-      <div class="card reveal">
+      <div class="card">
         <div class="k" style="color:var(--ok)">Control plane · what we operate</div>
         <ul class="checks">
           <li>Declared configuration: apps, model assignments, access rules, budgets, egress posture</li>
@@ -73,7 +73,7 @@
           <li>The audit trail's control-plane fields</li>
         </ul>
       </div>
-      <div class="card reveal">
+      <div class="card">
         <div class="k" style="color:var(--bad)">Data plane · what we never see</div>
         <ul class="checks x">
           <li>Prompts and responses, in any application</li>
@@ -83,7 +83,7 @@
         </ul>
       </div>
     </div>
-    <div class="callout reveal">
+    <div class="callout">
       <p><strong>Telemetry carries control-plane fields only.</strong> What leaves your deployment for our operations is health, versions, and metering, never content. The same constraint is written into every subcontractor relationship: vendor access is contractually scoped to the control and operations plane, never to prompts, documents, or weights.</p>
     </div>
   </div>
@@ -91,22 +91,22 @@
 
 <section class="alt">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>The control plane lives inside your perimeter. On purpose.</h2>
-      <p>Most managed products put the control plane in the vendor's SaaS. We deliberately don't: the surface where models are deployed, access is set, egress is enforced, and your audit trail lives runs self-hosted, behind your firewall, inside your trust boundary.</p>
+    <div class="sec-head">
+      <h2>The control plane lives inside your perimeter.</h2>
+      <p>The surface where models are deployed, access is set, egress is enforced, and your audit trail lives runs self-hosted, behind your firewall, inside your trust boundary. Placing it there was one of the first design decisions in the product, and much of the architecture exists to keep it true.</p>
     </div>
     <div class="cards">
-      <div class="card reveal">
-        <div class="k">No vendor reach-in</div>
-        <h3>Updates are pulled, never pushed</h3>
+      <div class="card">
+        <div class="k">Update custody</div>
+        <h3>Updates start inside the boundary</h3>
         <p>Platform and model updates are pulled from a mirror inside your perimeter and applied by a control loop we gate. Automated, but initiated inside the boundary. No vendor, including us, pushes changes in from outside.</p>
       </div>
-      <div class="card reveal">
+      <div class="card">
         <div class="k">Custody</div>
         <h3>The keys stay in the building</h3>
         <p>The control plane is the source of truth for access control; it holds the secrets, tokens, and certificates, and it owns the audit log. Custody of keys and audit trail is never subcontracted, to anyone.</p>
       </div>
-      <div class="card reveal">
+      <div class="card">
         <div class="k">One less trust decision</div>
         <h3>Fewer parties inside the boundary</h3>
         <p>Every additional party with in-perimeter control-plane access is one more entity your CISO must trust and audit. Our operating model is built to keep that list as short as it can be.</p>
@@ -118,22 +118,22 @@
 <section>
   <div class="wrap">
     <div class="split">
-      <div class="txt reveal">
+      <div class="txt">
         <div class="eyebrow">One control path</div>
-        <h3>Config in. Nothing else.</h3>
+        <h3>Configuration is the only way in.</h3>
         <p>There is exactly one way the system changes: versioned, signed configuration, reconciled by a proven GitOps engine.</p>
         <ul>
           <li><strong>Every change is reviewed before it applies</strong>, with its full effect shown as a diff.</li>
-          <li><strong>Drift is detected and reverted.</strong> If anything in the running system is tampered with, it is automatically restored to the declared state.</li>
-          <li><strong>The audit trail is the change history.</strong> Who changed what, when, from what, to what: answerable for the life of the deployment.</li>
-          <li><strong>The console structurally cannot do more.</strong> "Admin actions are confined to configuration writes" is proven by automated tests at the web layer.</li>
+          <li>Drift is detected and reverted. If anything in the running system is tampered with, it is automatically restored to the declared state.</li>
+          <li>The audit trail is the change history. Who changed what, when, from what, to what: answerable for the life of the deployment.</li>
+          <li>The console structurally cannot do more. "Admin actions are confined to configuration writes" is proven by automated tests at the web layer.</li>
         </ul>
       </div>
-      <div class="txt reveal">
+      <div class="txt">
         <div class="eyebrow">Fault-proven</div>
         <h3>We break it before we claim it.</h3>
         <p>Every enforcement control (budget refusal, egress blocking, drift reversion, tamper recovery) is validated by injected-fault tests: deliberately broken, shown to fail visibly, and shown to recover cleanly, before we claim it works.</p>
-        <p>The same honesty runs through the console: numbers carry their provenance, estimates are labelled, and a quantity the system can't measure renders as a labelled absence rather than an invented figure.</p>
+        <p>The same honesty runs through the console: numbers carry their provenance, estimates are labelled, and a quantity the system can't measure renders as a labelled absence.</p>
         <a class="foot-link" href="/governance/">Honesty as a UX principle →</a>
       </div>
     </div>
@@ -142,27 +142,27 @@
 
 <section class="alt">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head">
       <h2>Boundary crossings are explicit, or they don't happen.</h2>
     </div>
     <div class="cards">
-      <div class="card reveal">
+      <div class="card">
         <div class="k">Labelled</div>
         <h3>Every app states its boundary</h3>
         <p>An application backed by a third-party model says so plainly: "this application's prompts leave your perimeter to this provider, under your key." The console scores each app's sovereignty as configured.</p>
       </div>
-      <div class="card reveal">
+      <div class="card">
         <div class="k">Governed egress</div>
         <h3>Permitted, logged, whitelisted</h3>
         <p>Under controlled egress, only explicitly permitted outbound calls exist: user-invoked web search, docs lookups, whitelisted APIs, third-party model traffic under your key. Each one logged.</p>
       </div>
-      <div class="card reveal">
+      <div class="card">
         <div class="k">Content-free audit</div>
         <h3>Complete, and incapable of surveillance</h3>
-        <p>Identity, application, model, decision, timestamp, token counts: recorded for every call. Message content: never, by construction. An audit your compliance officer can sign and your employees can live with.</p>
+        <p>Identity, application, model, decision, timestamp, and token counts are recorded for every call, and message content is excluded by construction. An audit your compliance officer can sign and your employees can live with.</p>
       </div>
     </div>
-    <div class="arch reveal" style="max-width:780px;margin:40px auto 0">
+    <div class="arch" style="max-width:780px;margin:40px auto 0">
       <div class="arch-perimeter"><span>Your perimeter</span><span>crossings are explicit, permitted &amp; labelled</span></div>
       <div class="layer">
         <div><div class="l-name">Applications &amp; member memory</div><div class="l-desc">Prompts, documents, retrieval corpus, member context — stays inside</div></div>
@@ -183,14 +183,14 @@
 <section>
   <div class="wrap">
     <div class="split">
-      <div class="txt reveal">
+      <div class="txt">
         <div class="eyebrow">Identity</div>
         <h3>Your IdP, federated. Offboarding, provable.</h3>
-        <p>Identity federates from your provider over OIDC, so access follows the joiner-mover-leaver process you already run. Remove a person once and the console shows every app and model their access no longer reaches: offboarding you can demonstrate, not just assert.</p>
+        <p>Identity federates from your provider over OIDC, so access follows the joiner-mover-leaver process you already run. Remove a person once and the console shows every app and model their access no longer reaches: offboarding you can demonstrate to an auditor.</p>
       </div>
-      <div class="txt reveal">
+      <div class="txt">
         <div class="eyebrow">Air gap</div>
-        <h3>When "governed egress" isn't strict enough.</h3>
+        <h3>The ladder runs all the way to a full air gap.</h3>
         <p>The isolation ladder goes all the way to a full air gap: no connectivity, for classified and contractually air-gapped environments. Each rung's tradeoffs are stated up front, so you hold exactly the line your mandate requires.</p>
         <a class="foot-link" href="/deployment/">The isolation ladder →</a>
       </div>
@@ -199,8 +199,8 @@
 </section>
 
 <div class="cta-band">
-  <div class="wrap reveal">
-    <div class="eyebrow centered">Next step</div>
+  <div class="wrap">
+    <div class="eyebrow">Next step</div>
     <h2>Bring your CISO's hardest questions.</h2>
     <p>We built this product to survive a hostile security review. If your team wants to go deep on the boundary, the audit, or the enforcement model, that's the conversation we most enjoy.</p>
     <div class="hero-ctas">

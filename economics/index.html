@@ -59,28 +59,28 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Three sources. Three cost shapes.</h2>
+    <div class="sec-head">
+      <h2>Three sources, three cost shapes.</h2>
       <p>Any workload can be served from three places, and they price in different units:</p>
     </div>
     <div class="cards">
-      <div class="card reveal">
+      <div class="card">
         <div class="k">Frontier APIs</div>
         <h3>Top capability, top price</h3>
-        <p>The frontier closed models have no open-weight substitute at the top end, and their list prices reflect it. Some work genuinely needs them; most everyday seat work doesn't.</p>
+        <p>The frontier closed models have no open-weight substitute at the top end, and their list prices reflect it. A share of your work will need them; the everyday majority runs well on the tier below.</p>
       </div>
-      <div class="card reveal">
+      <div class="card">
         <div class="k">Open-weight APIs</div>
         <h3>The immediate price gap</h3>
         <p>The tier of open-weight models that handles the bulk of everyday work sells an order of magnitude or more below frontier list. That gap is capturable today, through a governed gateway, with no hardware.</p>
       </div>
-      <div class="card reveal">
+      <div class="card">
         <div class="k">Your hardware</div>
-        <h3>Priced per GPU-hour, not per token</h3>
+        <h3>Priced per GPU-hour</h3>
         <p>Owned or VPC capacity is a fixed cost that amortizes. Whether it beats the APIs depends on one variable more than any other: how much of the time the machine is actually serving.</p>
       </div>
     </div>
-    <div class="callout reveal">
+    <div class="callout">
       <p><strong>The spread inside "open" is real, and it's why curation is a product decision.</strong> The strongest open models price near frontier rates; the workhorse tier below them runs far cheaper. Deciding which model earns which workload is the difference between a price gap on a slide and one on your invoice.</p>
     </div>
   </div>
@@ -89,18 +89,18 @@
 <section class="alt">
   <div class="wrap">
     <div class="split">
-      <div class="txt reveal">
+      <div class="txt">
         <div class="eyebrow">The one variable that dominates</div>
         <h3>Utilization decides who wins.</h3>
         <p>The cost of an owned GPU-hour is the cost of running it plus the fixed cost of owning it, spread over the hours it actually serves. Because the fixed cost is recovered only over busy hours, unit cost rises steeply as utilization falls.</p>
         <p>Independent research measured that curve directly: effective cost spanning <strong>$0.21 to $15.25 per million output tokens on identical hardware</strong>, a penalty of 2.5 to 24 times across the range of typical enterprise load.</p>
-        <p>Two consequences, and neither is controversial:</p>
+        <p>Two consequences follow:</p>
         <ul>
           <li>An operator pooling demand across many customers runs at utilization no single tenant can match. That's why hosted APIs undercut a lightly used private cluster.</li>
           <li>A buyer whose demand is genuinely sustained inverts the advantage: the fixed cost spreads across enough hours to fall below what any provider charges to cover the same asset plus margin.</li>
         </ul>
       </div>
-      <div class="reveal">
+      <div>
         <figure style="margin:0">
           <svg viewBox="0 0 460 320" style="width:100%;height:auto;display:block" role="img" aria-label="Chart: effective cost per token falls steeply as utilization rises">
             <rect x="0" y="0" width="460" height="320" rx="12" fill="#ffffff" stroke="#e6e8ec"/>
@@ -119,7 +119,7 @@
               <text x="70" y="30" font-size="11" fill="#98a2b3">measured range on identical hardware: 2.5–24× </text>
             </g>
           </svg>
-          <figcaption style="font-size:12.5px;color:var(--muted);margin-top:10px;font-family:var(--mono)">Utilization is a property of your demand shape, not a dial. A business-hours workforce caps it; training or fine-tuning filling the idle hours lifts it.</figcaption>
+          <figcaption style="font-size:12.5px;color:var(--muted);margin-top:10px;font-family:var(--mono)">Utilization follows your demand shape. A business-hours workforce caps it; training or fine-tuning filling the idle hours lifts it.</figcaption>
         </figure>
       </div>
     </div>
@@ -128,11 +128,11 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head">
       <h2>Which posture wins, by workload profile.</h2>
       <p>The crossover exists in every deployment; where it falls depends on inputs specific to yours. The shape of the answer, though, is consistent:</p>
     </div>
-    <div class="tbl-scroll reveal">
+    <div class="tbl-scroll">
       <table>
         <thead><tr><th>Workload profile</th><th>Cheapest source</th><th>Why</th></tr></thead>
         <tbody>
@@ -150,21 +150,21 @@
 <section class="alt">
   <div class="wrap">
     <div class="split">
-      <div class="txt reveal">
-        <div class="eyebrow">No magic number</div>
-        <h3>Your breakeven comes from your meters, not our slides.</h3>
+      <div class="txt">
+        <div class="eyebrow">Your numbers decide</div>
+        <h3>Your breakeven comes from your own meters.</h3>
         <p>A breakeven percentage quoted to the decimal, before anyone has measured your demand shape, is a modelling artifact dressed as a fact. We hold a working cost model, re-computable from its inputs, and we'll walk through it with you in diligence. But the number that decides your posture is yours:</p>
         <ul>
           <li>The same metering that enforces your budgets measures your real demand shape.</li>
-          <li>The posture recommendation is computed from your usage, not our assumptions.</li>
+          <li>The posture recommendation is computed from that usage data.</li>
           <li>Until the data says otherwise, the cheap posture is where you stay.</li>
         </ul>
       </div>
-      <div class="txt reveal">
+      <div class="txt">
         <div class="eyebrow">Incentives</div>
-        <h3>We're paid for the decision, not the outcome.</h3>
+        <h3>Our fee is the same in every posture.</h3>
         <p>We're paid for governance, the application catalog, and operations, and the fee is charged in every posture. A customer who runs entirely on third-party APIs pays it; so does one who buys a cluster.</p>
-        <p>We earn nothing extra when you buy hardware and lose nothing when you don't, so when we tell you a workload should move, or stay put, the advice has no thumb on the scale. We're the party paid for the decision, not the outcome.</p>
+        <p>Our income stays flat whether you buy hardware or stay on APIs, so when we tell you a workload should move, or stay put, the advice has no thumb on the scale.</p>
         <a class="foot-link" href="/pricing/">The commercial structure →</a>
       </div>
     </div>
@@ -173,29 +173,29 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head">
       <h2>What this looks like in practice.</h2>
     </div>
     <div class="steps">
-      <div class="step reveal">
+      <div class="step">
         <h3>Capture the gap now</h3>
         <p>Move everyday seat work from frontier list prices to governed open-weight APIs under your own keys. No hardware, no procurement cycle, immediate difference on the bill.</p>
       </div>
-      <div class="step reveal">
+      <div class="step">
         <h3>Keep frontier where it earns it</h3>
         <p>The work that genuinely needs a frontier model keeps it, through the same gateway, under allowances. Nobody argues about it, because the audit trail shows which work that is.</p>
       </div>
-      <div class="step reveal">
+      <div class="step">
         <h3>Let your meters call the crossover</h3>
-        <p>When a workload's sustained volume justifies fixed capacity, on-prem or VPC, your own numbers make the case. If they never do, you never buy hardware, and the product loses nothing.</p>
+        <p>When a workload's sustained volume justifies fixed capacity, on-prem or VPC, your own numbers make the case. If the case stays weak, you simply keep the capex-free postures, with the full product intact.</p>
       </div>
     </div>
   </div>
 </section>
 
 <div class="cta-band">
-  <div class="wrap reveal">
-    <div class="eyebrow centered">Next step</div>
+  <div class="wrap">
+    <div class="eyebrow">Next step</div>
     <h2>Bring last month's AI bill.</h2>
     <p>Thirty minutes with your actual spend, and we'll show you what the posture mix would look like, and what we'd wait to measure before recommending anything else.</p>
     <div class="hero-ctas">
