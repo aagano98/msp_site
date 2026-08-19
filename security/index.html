@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security &amp; sovereignty — Your data stays yours, by architecture | Freehold</title>
+<meta name="description" content="Freehold enforces data sovereignty as a system property: a self-hosted control plane inside your perimeter, structural separation from your data plane, a content-free audit trail, and fault-proven enforcement.">
+<meta property="og:title" content="Freehold Security — Sovereignty as an architectural property">
+<meta property="og:description" content="Self-hosted control plane, structural separation from your data, content-free audit, fault-proven enforcement.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeholdtech.ai/security/">
+<link rel="canonical" href="https://freeholdtech.ai/security/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='7' fill='%232e6be6'/%3E%3Crect x='7' y='6.5' width='14' height='4.5' rx='1.5' fill='white'/%3E%3Crect x='7' y='12.5' width='4.5' height='9' rx='1.5' fill='white'/%3E%3Crect x='13' y='12.5' width='6.5' height='4' rx='1.5' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css?v=10">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../"><svg class="brand-tile" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--accent)"/><rect x="7" y="6.5" width="14" height="4.5" rx="1.5" fill="#fff"/><rect x="7" y="12.5" width="4.5" height="9" rx="1.5" fill="#fff"/><rect x="13" y="12.5" width="6.5" height="4" rx="1.5" fill="#fff"/></svg>Freehold</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li class="has-sub">
+          <a href="../platform/">Product</a>
+          <ul class="submenu">
+            <li><a href="../platform/">Platform<span class="sub-d">A deployment that arrives working</span></a></li>
+            <li><a href="../applications/">Applications<span class="sub-d">The catalog your employees open</span></a></li>
+            <li><a href="../governance/">Governance &amp; console<span class="sub-d">Built for IT generalists</span></a></li>
+            <li><a href="../deployment/">Deployment postures<span class="sub-d">On-prem, your cloud, governed API</span></a></li>
+            <li><a href="../security/" aria-current="page">Security &amp; sovereignty<span class="sub-d">Your data stays yours, by architecture</span></a></li>
+          </ul>
+        </li>
+        <li><a href="../solutions/">Solutions</a></li>
+        <li><a href="../economics/">Economics</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+        <li><a href="../pricing/">Pricing</a></li>
+        <li><a href="../company/">Company</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <details class="lang-menu">
+        <summary aria-label="Language: English"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="7.5"/><ellipse cx="10" cy="10" rx="3.4" ry="7.5"/><path d="M2.8 7.5h14.4M2.8 12.5h14.4"/></svg>EN</summary>
+        <ul class="lang-list"><li><a href="./" aria-current="true">English</a></li></ul>
+      </details>
+      <button class="search-btn" type="button" data-search-open aria-label="Search the site"><svg width="15" height="15" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="9" r="6"/><path d="M13.5 13.5L18 18" stroke-linecap="round"/></svg><span class="sb-label">Search</span></button>
+      <a class="nav-cta" href="mailto:hello@freeholdtech.ai?subject=Freehold%20deployment">Talk to us</a>
+      <label for="nav-toggle" class="nav-toggle-label"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="#101828" stroke-width="1.8" stroke-linecap="round"/></svg></label>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="../">Home</a> / Security &amp; sovereignty</div>
+    <div class="eyebrow">Security &amp; Sovereignty</div>
+    <h1>Sovereignty as an architectural property.</h1>
+    <p class="hero-sub">"Your data stays inside your perimeter" is usually a contract clause. Here it's a system property: the design constraint the whole product is built to hold, enforced by architecture, and where data does cross a boundary, the crossing is explicit, permitted, and labelled.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Security%20review">Talk to our team</a>
+      <a class="btn btn-ghost" href="../governance/">The audit trail</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What we operate, and what we can never see.</h2>
+      <p>We operate the control plane and are architecturally unable to read the data plane. That separation is what makes "we run the plumbing, we never see your data" literally true, and it contractually binds our subcontractors as well as us.</p>
+    </div>
+    <div class="cards two">
+      <div class="card">
+        <div class="k" style="color:var(--ok)">Control plane · what we operate</div>
+        <ul class="checks">
+          <li>Declared configuration: apps, model assignments, access rules, budgets, egress posture</li>
+          <li>System health, versions, reconciliation state</li>
+          <li>Metering: token counts, request decisions, capacity signals</li>
+          <li>The audit trail's control-plane fields</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="k" style="color:var(--bad)">Data plane · what we never see</div>
+        <ul class="checks x">
+          <li>Prompts and responses, in any application</li>
+          <li>Your documents and the retrieval corpus</li>
+          <li>Member memory content</li>
+          <li>Model weights and fine-tuned artifacts on your hardware</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <p><strong>Telemetry carries control-plane fields only.</strong> What leaves your deployment for our operations is health, versions, and metering, never content. The same constraint is written into every subcontractor relationship: vendor access is contractually scoped to the control and operations plane, never to prompts, documents, or weights.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ink">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The control plane lives inside your perimeter.</h2>
+      <p>The surface where models are deployed, access is set, egress is enforced, and your audit trail lives runs self-hosted, behind your firewall, inside your trust boundary. Placing it there was one of the first design decisions in the product, and much of the architecture exists to keep it true.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="k">Update custody</div>
+        <h3>Updates start inside the boundary</h3>
+        <p>Platform and model updates are pulled from a mirror inside your perimeter and applied by a control loop we gate. Automated, but initiated inside the boundary. No vendor, including us, pushes changes in from outside.</p>
+      </div>
+      <div class="card">
+        <div class="k">Custody</div>
+        <h3>The keys stay in the building</h3>
+        <p>The control plane is the source of truth for access control; it holds the secrets, tokens, and certificates, and it owns the audit log. Custody of keys and audit trail is never subcontracted, to anyone.</p>
+      </div>
+      <div class="card">
+        <div class="k">One less trust decision</div>
+        <h3>Fewer parties inside the boundary</h3>
+        <p>Every additional party with in-perimeter control-plane access is one more entity your CISO must trust and audit. Our operating model is built to keep that list as short as it can be.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <div class="eyebrow">One control path</div>
+        <h3>Configuration is the only way in.</h3>
+        <p>There is exactly one way the system changes: versioned, signed configuration, reconciled by a proven GitOps engine.</p>
+        <ul>
+          <li><strong>Every change is reviewed before it applies</strong>, with its full effect shown as a diff.</li>
+          <li>Drift is detected and reverted. If anything in the running system is tampered with, it is automatically restored to the declared state.</li>
+          <li>The audit trail is the change history. Who changed what, when, from what, to what: answerable for the life of the deployment.</li>
+          <li>The console structurally cannot do more. "Admin actions are confined to configuration writes" is proven by automated tests at the web layer.</li>
+        </ul>
+      </div>
+      <div class="txt">
+        <div class="eyebrow">Fault-proven</div>
+        <h3>We break it before we claim it.</h3>
+        <p>Every enforcement control (budget refusal, egress blocking, drift reversion, tamper recovery) is validated by injected-fault tests: deliberately broken, shown to fail visibly, and shown to recover cleanly, before we claim it works.</p>
+        <p>The same honesty runs through the console: numbers carry their provenance, estimates are labelled, and a quantity the system can't measure renders as a labelled absence.</p>
+        <a class="foot-link" href="../governance/">Honesty as a UX principle →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Boundary crossings are explicit, or they don't happen.</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="k">Labelled</div>
+        <h3>Every app states its boundary</h3>
+        <p>An application backed by a third-party model says so plainly: "this application's prompts leave your perimeter to this provider, under your key." The console scores each app's sovereignty as configured.</p>
+      </div>
+      <div class="card">
+        <div class="k">Governed egress</div>
+        <h3>Permitted, logged, whitelisted</h3>
+        <p>Under controlled egress, only explicitly permitted outbound calls exist: user-invoked web search, docs lookups, whitelisted APIs, third-party model traffic under your key. Each one logged.</p>
+      </div>
+      <div class="card">
+        <div class="k">Content-free audit</div>
+        <h3>Complete, and incapable of surveillance</h3>
+        <p>Identity, application, model, decision, timestamp, and token counts are recorded for every call, and message content is excluded by construction. An audit your compliance officer can sign and your employees can live with.</p>
+      </div>
+    </div>
+    <div class="arch" style="max-width:780px;margin:40px auto 0">
+      <div class="arch-perimeter"><span>Your perimeter</span><span>crossings are explicit, permitted &amp; labelled</span></div>
+      <div class="layer">
+        <div><div class="l-name">Applications &amp; member memory</div><div class="l-desc">Prompts, documents, retrieval corpus, member context — stays inside</div></div>
+        <span class="l-tag tag-ours">Data plane · yours</span>
+      </div>
+      <div class="layer layer-ours">
+        <div><div class="l-name">Governed gateway</div><div class="l-desc">Identity · budgets · egress policy · content-free audit — every call passes through</div></div>
+        <span class="l-tag tag-ours">Enforcement point</span>
+      </div>
+      <div class="layer">
+        <div><div class="l-name">Permitted crossings only</div><div class="l-desc">Third-party models under your key · whitelisted lookups · each labelled &amp; logged</div></div>
+        <span class="l-tag tag-theirs">Governed egress</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <div class="eyebrow">Identity</div>
+        <h3>Your IdP, federated. Offboarding, provable.</h3>
+        <p>Identity federates from your provider over OIDC, so access follows the joiner-mover-leaver process you already run. Remove a person once and the console shows every app and model their access no longer reaches: offboarding you can demonstrate to an auditor.</p>
+      </div>
+      <div class="txt">
+        <div class="eyebrow">Air gap</div>
+        <h3>The ladder runs all the way to a full air gap.</h3>
+        <p>The isolation ladder goes all the way to a full air gap: no connectivity, for classified and contractually air-gapped environments. Each rung's tradeoffs are stated up front, so you hold exactly the line your mandate requires.</p>
+        <a class="foot-link" href="../deployment/">The isolation ladder →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="closer">
+  <div class="wrap closer-inner">
+    <div>
+      <h3>Bring your CISO's hardest questions.</h3>
+      <p>We built this product to survive a hostile security review. If your team wants to go deep on the boundary, the audit, or the enforcement model, that's the conversation we most enjoy.</p>
+    </div>
+    <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Security%20review">Start a security conversation</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="wordmark" href="../"><svg class="brand-tile" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--accent)"/><rect x="7" y="6.5" width="14" height="4.5" rx="1.5" fill="#fff"/><rect x="7" y="12.5" width="4.5" height="9" rx="1.5" fill="#fff"/><rect x="13" y="12.5" width="6.5" height="4" rx="1.5" fill="#fff"/></svg>Freehold</a>
+        <p>Managed private AI. Working applications, governed by your IT office, on your hardware, in your cloud, or through governed APIs. One SLA.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../platform/">Platform</a></li>
+          <li><a href="../applications/">Applications</a></li>
+          <li><a href="../governance/">Governance &amp; console</a></li>
+          <li><a href="../deployment/">Deployment postures</a></li>
+          <li><a href="../security/">Security &amp; sovereignty</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="../solutions/">Solutions</a></li>
+          <li><a href="../economics/">Economics</a></li>
+          <li><a href="../faq/">FAQ</a></li>
+          <li><a href="../pricing/">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../company/">About</a></li>
+          <li><a href="../company/#early-access">Early access</a></li>
+          <li><a href="mailto:hello@freeholdtech.ai">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© <span id="yr">2026</span> Freehold Technologies, Inc. · Delaware, USA</span>
+      <span><a href="mailto:hello@freeholdtech.ai">hello@freeholdtech.ai</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/site.js?v=3"></script>
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel"><div id="search-box"></div></div>
+</div>
+<script src="../assets/search.js?v=1" defer></script>
+</body>
+</html>

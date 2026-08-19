@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — The questions buyers actually ask | Freehold</title>
+<meta name="description" content="Do you see our data? Do we need ML staff? Can we keep Claude or GPT? What hardware do we buy, and who fixes it? Can we run air-gapped? The Freehold FAQ, answered plainly.">
+<meta property="og:title" content="Freehold FAQ">
+<meta property="og:description" content="The questions buyers actually ask about managed private AI, answered plainly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeholdtech.ai/faq/">
+<link rel="canonical" href="https://freeholdtech.ai/faq/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='7' fill='%232e6be6'/%3E%3Crect x='7' y='6.5' width='14' height='4.5' rx='1.5' fill='white'/%3E%3Crect x='7' y='12.5' width='4.5' height='9' rx='1.5' fill='white'/%3E%3Crect x='13' y='12.5' width='6.5' height='4' rx='1.5' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css?v=10">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../"><svg class="brand-tile" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--accent)"/><rect x="7" y="6.5" width="14" height="4.5" rx="1.5" fill="#fff"/><rect x="7" y="12.5" width="4.5" height="9" rx="1.5" fill="#fff"/><rect x="13" y="12.5" width="6.5" height="4" rx="1.5" fill="#fff"/></svg>Freehold</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li class="has-sub">
+          <a href="../platform/">Product</a>
+          <ul class="submenu">
+            <li><a href="../platform/">Platform<span class="sub-d">A deployment that arrives working</span></a></li>
+            <li><a href="../applications/">Applications<span class="sub-d">The catalog your employees open</span></a></li>
+            <li><a href="../governance/">Governance &amp; console<span class="sub-d">Built for IT generalists</span></a></li>
+            <li><a href="../deployment/">Deployment postures<span class="sub-d">On-prem, your cloud, governed API</span></a></li>
+            <li><a href="../security/">Security &amp; sovereignty<span class="sub-d">Your data stays yours, by architecture</span></a></li>
+          </ul>
+        </li>
+        <li><a href="../solutions/">Solutions</a></li>
+        <li><a href="../economics/">Economics</a></li>
+        <li><a href="../faq/" aria-current="page">FAQ</a></li>
+        <li><a href="../pricing/">Pricing</a></li>
+        <li><a href="../company/">Company</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <details class="lang-menu">
+        <summary aria-label="Language: English"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="7.5"/><ellipse cx="10" cy="10" rx="3.4" ry="7.5"/><path d="M2.8 7.5h14.4M2.8 12.5h14.4"/></svg>EN</summary>
+        <ul class="lang-list"><li><a href="./" aria-current="true">English</a></li></ul>
+      </details>
+      <button class="search-btn" type="button" data-search-open aria-label="Search the site"><svg width="15" height="15" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="9" r="6"/><path d="M13.5 13.5L18 18" stroke-linecap="round"/></svg><span class="sb-label">Search</span></button>
+      <a class="nav-cta" href="mailto:hello@freeholdtech.ai?subject=Freehold%20deployment">Talk to us</a>
+      <label for="nav-toggle" class="nav-toggle-label"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="#101828" stroke-width="1.8" stroke-linecap="round"/></svg></label>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="../">Home</a> / FAQ</div>
+    <div class="eyebrow">FAQ</div>
+    <h1>Plain answers to the real questions.</h1>
+    <p class="hero-sub">The questions buyers actually ask, including the awkward ones. If yours isn't here, <a href="mailto:hello@freeholdtech.ai?subject=Question">ask it directly</a>: plain answers are a product principle.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap" style="max-width:860px">
+    <div class="faq">
+
+      <h2 style="margin:0 0 18px;font-size:22px">Data &amp; trust</h2>
+
+      <details>
+        <summary>Can Freehold see our prompts, documents, or data?</summary>
+        <div class="a">
+          <p>No. The separation is architectural: we operate the control plane (configuration, health, versions, metering) and are structurally unable to read the data plane (prompts, responses, documents, member memory, model weights). Telemetry that leaves your deployment carries control-plane fields only.</p>
+          <p>The same constraint contractually binds our subcontractors: any vendor access is scoped to the control and operations plane, never to your data.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What exactly is in the audit trail?</summary>
+        <div class="a">
+          <p>For every model call: identity, application, model, decision, timestamp, and token counts. Message content is never recorded, by construction. That makes the trail complete enough for an auditor ("who used what, when, how much") and structurally incapable of becoming a surveillance log of what your employees wrote.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Where does the control plane run?</summary>
+        <div class="a">
+          <p>Inside your perimeter: on your hardware or in your own cloud tenancy, never as a SaaS we host. It holds your keys, your access rules, and your audit trail. Updates are pulled from a mirror inside the boundary on a schedule we gate; nothing is pushed in from outside, by any vendor, including us.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can we run fully air-gapped?</summary>
+        <div class="a">
+          <p>Yes. Isolation is a configurable ladder: air-gapped (no connectivity), controlled (the common case: data stays in, only explicitly permitted and logged calls go out), or connected. Stricter postures carry fewer conveniences and cost more to operate, and we price that honestly.</p>
+        </div>
+      </details>
+
+      <h2 style="margin:36px 0 18px;font-size:22px">Product &amp; models</h2>
+
+      <details>
+        <summary>Do we need to hire ML or platform engineers?</summary>
+        <div class="a">
+          <p>No, and the whole product is built on that premise. The console is designed for the IT administrator who runs Google Workspace, Okta, or the M365 admin center, and it's measured against the concrete jobs that person must complete unaided: give a team an AI application, handle "the AI is slow," handle "we need model Y," offboard a person and prove it, pass an audit. Kubernetes stays on our side of the line.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can our teams keep using Claude, GPT, or Gemini?</summary>
+        <div class="a">
+          <p>Yes, through the governed third-party posture: frontier providers plug in under your own keys, behind your own gateway, with per-person allowances and the same content-free audit as everything else. When an allowance is spent, the app falls back automatically to a local model. Frontier access becomes something you govern.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Which models do we get?</summary>
+        <div class="a">
+          <p>A curated menu with honest tiers. Hot models are pinned in GPU memory and answer instantly. Available models load on demand, with a first-call wait stated in the console. Everything else runs as an external model under your own provider keys, through the same gateway, with its capacity taken from the provider's own rate limit. Models appear under their real names, and the menu is kept current as the frontier moves, through the managed update pipeline.</p>
+          <p>The tiering is honest physics: GPU memory is the real ceiling on what can answer instantly, and we'd rather disclose that than let you discover it mid-rollout.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do you know how many people a model can serve?</summary>
+        <div class="a">
+          <p>Two different questions get two different measurements. Whether a model fits is a question about GPU capacity, answered in units the console shows you. Whether it will hold up for everyone pointed at it is a question about measured throughput, and GPU count alone can't answer it: across model classes, the same hardware spans a roughly forty-fold range in tokens per second, so any tool converting GPU count into "people served" is guessing.</p>
+          <p>Capacity starts as a labelled industry-benchmark estimate, gets measured on your own hardware, and reads out in human terms: "about 40 people comfortably," with the basis shown. The console also pairs what you've committed through grants with the peak actually observed, so you can see over-commitment before your users feel it.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is there an agent builder or low-code canvas?</summary>
+        <div class="a">
+          <p>No, by design. Builder surfaces are aimed at a technical persona most of our buyers don't employ, so we put that engineering into finished apps instead. If you need something beyond the shelf, customer-funded builds are one of the ways the catalog grows.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Some of the catalog is adopted open source. What does that mean for us?</summary>
+        <div class="a">
+          <p>Some catalog applications are proven open-source products we've adopted and integrated: licenses inventoried, notices preserved, branding intact where a license requires it. Two things matter for you:</p>
+          <ul>
+            <li>We are your support-of-record for every catalog app, whoever wrote it. Your recourse is always us.</li>
+            <li>We only adopt apps whose maintenance we could carry alone if the upstream project changes course, so a project's relicensing or abandonment never strands your deployment.</li>
+          </ul>
+        </div>
+      </details>
+
+      <h2 style="margin:36px 0 18px;font-size:22px">Deployment &amp; operations</h2>
+
+      <details>
+        <summary>What hardware do we have to buy?</summary>
+        <div class="a">
+          <p>Possibly none. Two of the three postures carry no hardware at all: your workloads can run in your own cloud tenancy or behind governed third-party APIs. If and when your sustained volume justifies owned capacity, we deploy on prebuilt certified enterprise AI systems (the Dell, HPE, and Lenovo AI factory lines), purchased by you, on your balance sheet, from a small set of blessed configurations we operate fleet-wide.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Who shows up when a GPU dies?</summary>
+        <div class="a">
+          <p>The hardware vendor's field service, working as our subcontractor under back-to-back commitments. You hold one SLA, with us; we hold our vendors to response times that let us honor it. We manage Dell, Red Hat, and NVIDIA behind the scenes, and their access stops at the control plane.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>We have no cloud footprint and no data center. Are we disqualified?</summary>
+        <div class="a">
+          <p>No. The platform layer needs only modest, GPU-free compute. If you have no cloud presence, we procure and stand up a tenancy in your name as part of onboarding, with ownership landing with you: your tenancy, your keys, your data. A missing cloud footprint is an onboarding step for us, and ownership still lands with you.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do updates work?</summary>
+        <div class="a">
+          <p>Every update, platform, models, and applications, is validated against real workloads before your fleet takes it, then delivered through a signed release path and pulled from inside your perimeter on a schedule we gate. Drift between the running system and its declared configuration is detected and automatically reverted. Your team stays out of it unless you've asked to gate specific windows.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What happens if we leave?</summary>
+        <div class="a">
+          <p>You keep what's yours, which is most of it: the hardware is on your balance sheet, the cloud tenancy is in your name, the keys are yours, and your data never left your perimeter to begin with. Adopted open-source applications remain licensed to run. What you lose is us: the governance layer, the catalog updates, and the operations. Exit is a conversation we'll have with you before you sign.</p>
+        </div>
+      </details>
+
+      <h2 style="margin:36px 0 18px;font-size:22px">Commercial</h2>
+
+      <details>
+        <summary>How is Freehold priced?</summary>
+        <div class="a">
+          <p>A base deployment subscription (standard apps + governance + operations, with a per-seat governance license), per-app add-on subscriptions priced individually on the shelf, a one-time fixed-scope onboarding fee, and pass-throughs (hardware, the NVIDIA AI Enterprise entitlement, third-party model usage under your keys) visible at their real rates. The fee is the same in every posture, and we take no per-token margin. Details on the <a href="../pricing/">pricing page</a>.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Why not just buy the certified hardware and run it ourselves?</summary>
+        <div class="a">
+          <p>If you have a platform team that wants to own model serving, GPU scheduling, upgrade gating, egress policy, and 24/7 on-call, that's a legitimate path, and the hardware vendors will happily sell it to you. Most of our customers don't have that team and never will. What they'd have to hire, we operate, and because we run a whole fleet, our operating cost per deployment keeps falling while a single self-hosted cluster pays its full cost alone.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Where is Freehold in its life as a company?</summary>
+        <div class="a">
+          <p>Early, and we'd rather you hear it from us. The governance core, gateway, and console are built and fault-tested, and we're deploying with a small number of design partners now. What early buys you: direct access to the team that builds the product, catalog priorities steered by your needs, and design-partner terms. If you need a vendor with a decade of logos, we're not that yet, and we won't pretend otherwise.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<div class="closer">
+  <div class="wrap closer-inner">
+    <div>
+      <h3>Ask the question the FAQ didn't answer.</h3>
+      <p>Plain answers, from the people building it.</p>
+    </div>
+    <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Question">Ask us directly</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="wordmark" href="../"><svg class="brand-tile" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--accent)"/><rect x="7" y="6.5" width="14" height="4.5" rx="1.5" fill="#fff"/><rect x="7" y="12.5" width="4.5" height="9" rx="1.5" fill="#fff"/><rect x="13" y="12.5" width="6.5" height="4" rx="1.5" fill="#fff"/></svg>Freehold</a>
+        <p>Managed private AI. Working applications, governed by your IT office, on your hardware, in your cloud, or through governed APIs. One SLA.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../platform/">Platform</a></li>
+          <li><a href="../applications/">Applications</a></li>
+          <li><a href="../governance/">Governance &amp; console</a></li>
+          <li><a href="../deployment/">Deployment postures</a></li>
+          <li><a href="../security/">Security &amp; sovereignty</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="../solutions/">Solutions</a></li>
+          <li><a href="../economics/">Economics</a></li>
+          <li><a href="../faq/">FAQ</a></li>
+          <li><a href="../pricing/">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../company/">About</a></li>
+          <li><a href="../company/#early-access">Early access</a></li>
+          <li><a href="mailto:hello@freeholdtech.ai">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© <span id="yr">2026</span> Freehold Technologies, Inc. · Delaware, USA</span>
+      <span><a href="mailto:hello@freeholdtech.ai">hello@freeholdtech.ai</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/site.js?v=3"></script>
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel"><div id="search-box"></div></div>
+</div>
+<script src="../assets/search.js?v=1" defer></script>
+</body>
+</html>

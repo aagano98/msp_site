@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deployment postures — On-prem, your cloud, or governed APIs | Freehold</title>
+<meta name="description" content="One product, three places models can run: customer-owned certified hardware, a VPC in your name, or governed third-party APIs under your own keys. Mix postures per workload and move later without a re-integration project.">
+<meta property="og:title" content="Freehold Deployment — On-prem, your cloud, or governed APIs">
+<meta property="og:description" content="Mix postures per workload: your hardware, your cloud tenancy, or governed APIs under your keys, with workloads free to move as your numbers change.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeholdtech.ai/deployment/">
+<link rel="canonical" href="https://freeholdtech.ai/deployment/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='7' fill='%232e6be6'/%3E%3Crect x='7' y='6.5' width='14' height='4.5' rx='1.5' fill='white'/%3E%3Crect x='7' y='12.5' width='4.5' height='9' rx='1.5' fill='white'/%3E%3Crect x='13' y='12.5' width='6.5' height='4' rx='1.5' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css?v=10">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../"><svg class="brand-tile" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--accent)"/><rect x="7" y="6.5" width="14" height="4.5" rx="1.5" fill="#fff"/><rect x="7" y="12.5" width="4.5" height="9" rx="1.5" fill="#fff"/><rect x="13" y="12.5" width="6.5" height="4" rx="1.5" fill="#fff"/></svg>Freehold</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li class="has-sub">
+          <a href="../platform/">Product</a>
+          <ul class="submenu">
+            <li><a href="../platform/">Platform<span class="sub-d">A deployment that arrives working</span></a></li>
+            <li><a href="../applications/">Applications<span class="sub-d">The catalog your employees open</span></a></li>
+            <li><a href="../governance/">Governance &amp; console<span class="sub-d">Built for IT generalists</span></a></li>
+            <li><a href="../deployment/" aria-current="page">Deployment postures<span class="sub-d">On-prem, your cloud, governed API</span></a></li>
+            <li><a href="../security/">Security &amp; sovereignty<span class="sub-d">Your data stays yours, by architecture</span></a></li>
+          </ul>
+        </li>
+        <li><a href="../solutions/">Solutions</a></li>
+        <li><a href="../economics/">Economics</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+        <li><a href="../pricing/">Pricing</a></li>
+        <li><a href="../company/">Company</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <details class="lang-menu">
+        <summary aria-label="Language: English"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="7.5"/><ellipse cx="10" cy="10" rx="3.4" ry="7.5"/><path d="M2.8 7.5h14.4M2.8 12.5h14.4"/></svg>EN</summary>
+        <ul class="lang-list"><li><a href="./" aria-current="true">English</a></li></ul>
+      </details>
+      <button class="search-btn" type="button" data-search-open aria-label="Search the site"><svg width="15" height="15" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="9" r="6"/><path d="M13.5 13.5L18 18" stroke-linecap="round"/></svg><span class="sb-label">Search</span></button>
+      <a class="nav-cta" href="mailto:hello@freeholdtech.ai?subject=Freehold%20deployment">Talk to us</a>
+      <label for="nav-toggle" class="nav-toggle-label"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="#101828" stroke-width="1.8" stroke-linecap="round"/></svg></label>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="../">Home</a> / Deployment postures</div>
+    <div class="eyebrow">Deployment Postures</div>
+    <h1>One product, three places models can run.</h1>
+    <p class="hero-sub">Two layers deploy under different rules. The <strong>platform</strong> (console, gateway, hosted applications, member memory) always runs under your control, on your hardware or in your own cloud tenancy, never at a model provider. The <strong>models</strong> are the layer that moves: each workload runs wherever its economics and constraints point.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Deployment%20postures">Talk through your posture</a>
+      <a class="btn btn-ghost" href="../economics/">The economics of each</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The three postures, side by side.</h2>
+    </div>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Posture</th><th>Where models run</th><th>Cost shape</th><th>Primary draw</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>On-premises</td>
+            <td>Customer-owned certified hardware, in your building.</td>
+            <td>Fixed cost that amortizes; wins at high sustained volume.</td>
+            <td>Strongest sovereignty; ownership economics.</td>
+          </tr>
+          <tr>
+            <td>Your cloud (VPC)</td>
+            <td>A cloud tenancy in your name: your existing one, or one we procure and stand up for you during onboarding.</td>
+            <td>Rented compute, no capex; data stays in your tenancy.</td>
+            <td>Control without a data center, and without needing prior cloud maturity.</td>
+          </tr>
+          <tr>
+            <td>Governed third-party API</td>
+            <td>Provider endpoints, frontier or open-model hosts, under your own keys.</td>
+            <td>Pure per-token; cheapest at low or bursty volume.</td>
+            <td>Immediate start; frontier access; commodity open-model prices.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <p><strong>Every posture runs through the same governance.</strong> Every request flows through your own gateway (identity, metering, budgets, the content-free audit) before any model sees it, wherever that model runs. The data-boundary label states plainly when a workload's prompts leave your perimeter, and to whom.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The posture mix is set per application, per group.</h2>
+      <p>One group's chat can run on a local model while another group's runs against a frontier provider under your key with an allowance, falling back to the local model when it's spent. That per-request governance is the same gateway in every posture, which is what makes the mix administrable by a generalist instead of a platform team.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Start light</h3>
+        <p>Platform on a small, GPU-free footprint in your own tenancy, every model reached through governed APIs. Capture the open-model price gap immediately, with no hardware procurement and no data-center visit.</p>
+      </div>
+      <div class="step">
+        <h3>Add capacity when your numbers say so</h3>
+        <p>The metering that enforces your budgets also measures your real demand shape. When a workload's sustained volume justifies fixed capacity, the recommendation comes from your own usage data.</p>
+      </div>
+      <div class="step">
+        <h3>Move without a project</h3>
+        <p>Moving a workload between postures changes where its model runs and nothing else. The same gateway, policies, applications, and member memory carry over, so the move becomes an economic decision you take when the numbers support it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Isolation posture is a configurable ladder.</h2>
+      <p>Independent of where models run, you choose how connected the deployment is. Each rung is a real operating mode with its tradeoffs stated up front, so you can hold exactly the line your constraints require.</p>
+    </div>
+    <div class="ladder">
+      <div class="rung">
+        <div class="rung-step">Rung 1 · strictest</div>
+        <div>
+          <h3>Air-gapped</h3>
+          <p>No connectivity. For classified, government, and contractually air-gapped environments. Fewest capabilities, strongest guarantee.</p>
+          <span class="pill pill-warn">for mandates that require it</span>
+        </div>
+      </div>
+      <div class="rung common">
+        <div class="rung-step">Rung 2 · common case</div>
+        <div>
+          <h3>Controlled</h3>
+          <p>Internet-connected, data flow governed. Documents and prompts never leave; only explicitly permitted, logged outbound calls do: user-invoked web search, docs lookups, whitelisted APIs, third-party models under your key.</p>
+          <span class="pill pill-accent">most deployments land here</span>
+        </div>
+      </div>
+      <div class="rung">
+        <div class="rung-step">Rung 3 · most open</div>
+        <div>
+          <h3>Connected</h3>
+          <p>Fully connected, for cost-driven buyers with no residency mandate. Still governed: the gateway, budgets, and audit apply to every call regardless.</p>
+          <span class="pill pill-ok">lightest to operate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <div class="eyebrow">Hardware</div>
+        <h3>Certified, prebuilt, and yours.</h3>
+        <p>For the on-premises posture we deploy on prebuilt enterprise AI systems: the Dell, HPE, and Lenovo AI factory lines built on NVIDIA AI Enterprise. Never custom-assembled hardware.</p>
+        <ul>
+          <li>Your capex, your depreciation, your balance-sheet benefit. The hardware is yours outright.</li>
+          <li>A small set of blessed configurations. We deploy known-good configurations of the certified lines, which is what keeps fleet operations dependable.</li>
+          <li>Transparent bill of materials. Hardware at vendor pricing and the NVIDIA AI Enterprise entitlement appear on your bill of materials as what they are. No bundle fog.</li>
+        </ul>
+      </div>
+      <div class="txt">
+        <div class="eyebrow">Start anywhere</div>
+        <h3>Start where you are, even with no cloud at all.</h3>
+        <p>For a buyer segment defined by not having a platform team, requiring an existing, well-run cloud tenancy would be a strange thing to ask. So we don't.</p>
+        <p>If you have no cloud presence at all, we procure and stand up a tenancy in your name as a fast onboarding step, with ownership landing where it belongs: your tenancy, your keys, your data. The platform layer needs only modest, GPU-free compute, so it imposes no hardware decision of its own.</p>
+        <a class="foot-link" href="../faq/">More in the FAQ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="closer">
+  <div class="wrap closer-inner">
+    <div>
+      <h3>Posture-mapping is part of the product.</h3>
+      <p>Bring your constraints (residency, budget, existing spend, appetite for hardware) and we'll map your workloads to postures on your numbers.</p>
+    </div>
+    <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Deployment%20postures">Talk to us</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="wordmark" href="../"><svg class="brand-tile" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--accent)"/><rect x="7" y="6.5" width="14" height="4.5" rx="1.5" fill="#fff"/><rect x="7" y="12.5" width="4.5" height="9" rx="1.5" fill="#fff"/><rect x="13" y="12.5" width="6.5" height="4" rx="1.5" fill="#fff"/></svg>Freehold</a>
+        <p>Managed private AI. Working applications, governed by your IT office, on your hardware, in your cloud, or through governed APIs. One SLA.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../platform/">Platform</a></li>
+          <li><a href="../applications/">Applications</a></li>
+          <li><a href="../governance/">Governance &amp; console</a></li>
+          <li><a href="../deployment/">Deployment postures</a></li>
+          <li><a href="../security/">Security &amp; sovereignty</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="../solutions/">Solutions</a></li>
+          <li><a href="../economics/">Economics</a></li>
+          <li><a href="../faq/">FAQ</a></li>
+          <li><a href="../pricing/">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../company/">About</a></li>
+          <li><a href="../company/#early-access">Early access</a></li>
+          <li><a href="mailto:hello@freeholdtech.ai">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© <span id="yr">2026</span> Freehold Technologies, Inc. · Delaware, USA</span>
+      <span><a href="mailto:hello@freeholdtech.ai">hello@freeholdtech.ai</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/site.js?v=3"></script>
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel"><div id="search-box"></div></div>
+</div>
+<script src="../assets/search.js?v=1" defer></script>
+</body>
+</html>

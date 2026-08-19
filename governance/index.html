@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Governance &amp; console — Built for IT generalists | Freehold</title>
+<meta name="description" content="The Freehold console speaks in people, groups, applications, and models, translates GPU physics into human terms, and shows every number with its provenance. Config-only control, budgets enforced at the gateway, and a content-free audit.">
+<meta property="og:title" content="Freehold Governance — Run AI in the language you already speak">
+<meta property="og:description" content="People, groups, applications, models. Honest numbers with provenance, budgets enforced at the gateway, and a content-free audit. Built for IT generalists.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freeholdtech.ai/governance/">
+<link rel="canonical" href="https://freeholdtech.ai/governance/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='7' fill='%232e6be6'/%3E%3Crect x='7' y='6.5' width='14' height='4.5' rx='1.5' fill='white'/%3E%3Crect x='7' y='12.5' width='4.5' height='9' rx='1.5' fill='white'/%3E%3Crect x='13' y='12.5' width='6.5' height='4' rx='1.5' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css?v=10">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../"><svg class="brand-tile" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--accent)"/><rect x="7" y="6.5" width="14" height="4.5" rx="1.5" fill="#fff"/><rect x="7" y="12.5" width="4.5" height="9" rx="1.5" fill="#fff"/><rect x="13" y="12.5" width="6.5" height="4" rx="1.5" fill="#fff"/></svg>Freehold</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+        <li class="has-sub">
+          <a href="../platform/">Product</a>
+          <ul class="submenu">
+            <li><a href="../platform/">Platform<span class="sub-d">A deployment that arrives working</span></a></li>
+            <li><a href="../applications/">Applications<span class="sub-d">The catalog your employees open</span></a></li>
+            <li><a href="../governance/" aria-current="page">Governance &amp; console<span class="sub-d">Built for IT generalists</span></a></li>
+            <li><a href="../deployment/">Deployment postures<span class="sub-d">On-prem, your cloud, governed API</span></a></li>
+            <li><a href="../security/">Security &amp; sovereignty<span class="sub-d">Your data stays yours, by architecture</span></a></li>
+          </ul>
+        </li>
+        <li><a href="../solutions/">Solutions</a></li>
+        <li><a href="../economics/">Economics</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+        <li><a href="../pricing/">Pricing</a></li>
+        <li><a href="../company/">Company</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <details class="lang-menu">
+        <summary aria-label="Language: English"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="7.5"/><ellipse cx="10" cy="10" rx="3.4" ry="7.5"/><path d="M2.8 7.5h14.4M2.8 12.5h14.4"/></svg>EN</summary>
+        <ul class="lang-list"><li><a href="./" aria-current="true">English</a></li></ul>
+      </details>
+      <button class="search-btn" type="button" data-search-open aria-label="Search the site"><svg width="15" height="15" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="9" r="6"/><path d="M13.5 13.5L18 18" stroke-linecap="round"/></svg><span class="sb-label">Search</span></button>
+      <a class="nav-cta" href="mailto:hello@freeholdtech.ai?subject=Freehold%20deployment">Talk to us</a>
+      <label for="nav-toggle" class="nav-toggle-label"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="#101828" stroke-width="1.8" stroke-linecap="round"/></svg></label>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="../">Home</a> / Governance &amp; console</div>
+    <div class="eyebrow">Governance &amp; Console</div>
+    <h1>Built for the person who runs everything else.</h1>
+    <p class="hero-sub">The Freehold console is designed for the IT administrator who runs Google Workspace, Okta, or the M365 admin center. It speaks in people, groups, applications, and alerts, and it translates the GPU physics into human terms, so a generalist can answer their manager's questions on the spot.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Console%20walkthrough">Request a walkthrough</a>
+      <a class="btn btn-ghost" href="../security/">The enforcement underneath</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Four objects carry the whole mental model.</h2>
+      <p>People belong to groups. Groups are permitted applications. Applications point at models. Everything the console governs hangs off that chain, in the vocabulary your team already uses.</p>
+    </div>
+    <div class="chain">
+      <div class="chain-node">
+        <div class="k">People</div>
+        <h3>Budgets and allowances</h3>
+        <p>Federated from your identity provider. Each person carries a per-minute budget and, where you allow external models, a windowed allowance. Consumption is metered individually.</p>
+      </div>
+      <div class="chain-node">
+        <div class="k">Groups</div>
+        <h3>Where policy lives</h3>
+        <p>A group is a governance scope: which applications are permitted, aggregate caps, and how consumption divides among members. The org chart stays an org chart; groups govern usage.</p>
+      </div>
+      <div class="chain-node">
+        <div class="k">Applications</div>
+        <h3>Named, versioned products</h3>
+        <p>Real products from the catalog, publisher-labelled and updated across the fleet, each pointing at the model that powers it, with observed adoption shown next to status.</p>
+      </div>
+      <div class="chain-node">
+        <div class="k">Models</div>
+        <h3>Hosted, or under your key</h3>
+        <p>Hosted models come from the curated menu and occupy measured capacity. External models run under your own provider keys through the same gateway, with the data boundary labelled.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <p><strong>The split that keeps sizing sane:</strong> granting an application to a group costs nothing, hosting a model occupies real GPU capacity, and each person's consumption is metered. The console keeps the three apart, so an access decision never masquerades as a capacity decision.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <div class="eyebrow">Decisions, previewed</div>
+        <h3>Every choice arrives with its consequences computed.</h3>
+        <p>The console offers decisions with the outcome attached, and it only offers options that fit:</p>
+        <ul>
+          <li>Hosting a model answers both capacity questions in one dialog: does it fit, measured in GPU-units, and will it hold up, measured in throughput.</li>
+          <li>Every change previews its effect in plain language before it applies, then lands as versioned, signed configuration that the platform reconciles continuously.</li>
+          <li>A refused action explains itself and names the alternatives that would work.</li>
+        </ul>
+        <p>The screens are designed as golden paths for the jobs you'll actually do: give a team an AI application, handle "the AI is slow," handle "we need model Y," offboard a person and prove it, pass an audit.</p>
+      </div>
+      <div>
+        <div class="shot" role="img" aria-label="Illustration of the console's two-question hosting preview">
+          <div class="shot-top"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-url">console · host a model · preview</span></div>
+          <div class="shot-body">
+            <div class="shot-main" style="background:var(--surface)">
+              <div class="shot-h">Host Qwen2.5-Coder-32B</div>
+              <div class="shot-sub">Preview · applies only on your approval</div>
+              <div class="shot-row"><div><div class="rn">Does it fit?</div><div class="rd">footprint 1 GPU-unit · 2 free in the serving pool</div></div><span class="pill pill-ok">fits</span></div>
+              <div class="shot-row"><div><div class="rn">Will it hold up?</div><div class="rd">capacity ≈ 1,900 tok/s · about 40 people comfortably</div></div><span class="pill pill-info">estimate</span></div>
+              <div class="shot-row"><div><div class="rn">Effect on grants</div><div class="rd">committed demand 0.8× of capacity · within margin</div></div><span class="pill pill-ok">within margin</span></div>
+              <div class="shot-note">estimate labelled until measured on your hardware · consequences computed before apply</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Enforcement is a cap at the gateway.</h2>
+      <p>When a request would exceed its limits, the gateway declines it before any model sees it, with a message that explains. Simple to reason about, visible in the audit, and free of scheduler mysteries.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="k">Per-person budgets</div>
+        <h3>Enforced before serving</h3>
+        <p>Requests and tokens per minute, checked at the gateway on every call. Group-level caps aggregate the same mechanism. Usage totals accumulate from the same audit stream your reports read.</p>
+      </div>
+      <div class="card">
+        <div class="k">Allowances</div>
+        <h3>Premium while it lasts, sovereign after</h3>
+        <p>Route a group to a frontier model under your own key, capped by a per-person windowed allowance. When it's spent, the app falls back automatically to your hosted model and the data-boundary label updates to match.</p>
+      </div>
+      <div class="card">
+        <div class="k">Promise, meet observation</div>
+        <h3>Committed next to observed</h3>
+        <p>For every model, the console pairs the demand you've committed through grants with the peak actually observed. Right-sizing becomes something you read off the screen, per model, per group.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <p><strong>Hard guarantees come from walls.</strong> A group that needs physical isolation or a strict latency promise gets a dedicated model instance of its own. Shared serving stays governed by caps your team can read at a glance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <div class="eyebrow">The audit trail</div>
+        <h3>Content-free by construction.</h3>
+        <p>Every model call writes an audit line: identity, group, application, model, decision, timestamp, token counts. Message content is never recorded, and the audit layer is built without a place for it to go.</p>
+        <p>A compliance officer can sign off on that: complete enough to answer "who used what, when, and how much," and structurally incapable of becoming a surveillance log of what your employees wrote.</p>
+        <a class="foot-link" href="../security/">More on the data boundary →</a>
+      </div>
+      <div class="txt">
+        <div class="eyebrow">Identity</div>
+        <h3>Your identity provider is the source of truth.</h3>
+        <p>Members and groups federate from your IdP over OIDC. Access follows your existing joiner-mover-leaver process, and offboarding is provable: remove a person once, and the console shows you every app and model that access no longer reaches.</p>
+        <p>Roles in the console are scoped for real organizations: setting budgets and approving egress changes can sit with different people.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Numbers you can take to a meeting.</h2>
+      <p>GPU tools love bare percentages. The console shows where every number comes from and what it's made of:</p>
+    </div>
+    <ul class="checks" style="max-width:760px">
+      <li>Every number is labelled measured, derived, or declared, and an estimate says so until your own hardware has been measured.</li>
+      <li>Ratios name both of their parts: "load: 62% of measured capacity" is the minimum the console will say, and bare "utilization" figures stay out of it entirely.</li>
+      <li>Capacity reads in human terms, "about 40 people comfortably," with the basis shown alongside.</li>
+      <li>A quantity the system can't yet measure renders as a labelled absence, with the gap stated on screen.</li>
+      <li>Physics is measured and policy is declared: an admin sets budgets, caps, and grants, while capacity numbers arrive from measurement. The console keeps you from ever typing a guess into a fact's field.</li>
+      <li>True names everywhere: models and applications appear as themselves, because you're trusted to know what a model is.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <div class="eyebrow">The applied-change record</div>
+        <h3>Every action is a configuration change, versioned and signed.</h3>
+        <p>Changing a model, granting a group, raising a cap: each lands as a signed change with a diff, an author, and an applied timestamp, and the deployment loop carries it fleet-wide in seconds.</p>
+        <p>The history reads like a ledger. Rollback is a change like any other, and the same record that satisfies an auditor explains last Tuesday to your own team.</p>
+      </div>
+      <div>
+        <div class="change-rec" role="img" aria-label="An applied configuration change: a model swap, declared, signed, and applied fleet-wide in eleven seconds">
+          <div class="cr-head"><span class="cr-title">Change #147 · applications/librechat</span><span class="pill pill-ok">applied</span></div>
+          <div class="cr-steps">
+            <div><div class="cr-k">Declared</div><div class="cr-v">14:02:11 · aaron@</div></div>
+            <div><div class="cr-k">Signed</div><div class="cr-v">14:02:11 · sha256 &#10003;</div></div>
+            <div><div class="cr-k cr-on">Applied</div><div class="cr-v">14:02:22 · fleet-wide</div></div>
+          </div>
+          <div class="cr-diff">
+            <div class="cr-ctx">applications:</div>
+            <div class="cr-ctx">&nbsp;&nbsp;librechat:</div>
+            <div class="cr-del">-&nbsp;&nbsp;&nbsp;model: llama-3.1-70b</div>
+            <div class="cr-add">+&nbsp;&nbsp;&nbsp;model: llama-3.3-70b</div>
+            <div class="cr-ctx">&nbsp;&nbsp;&nbsp;&nbsp;groups: [all]</div>
+          </div>
+          <div class="cr-foot"><span>Versioned, signed, and auditable. Content never recorded.</span><span>11 seconds, declared to applied</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="closer">
+  <div class="wrap closer-inner">
+    <div>
+      <h3>Put your IT lead in front of it.</h3>
+      <p>The fastest way to evaluate Freehold is to walk the console with the person who'd run it. Bring your Workspace or M365 admin; they'll be at home in minutes.</p>
+    </div>
+    <a class="btn btn-primary" href="mailto:hello@freeholdtech.ai?subject=Console%20walkthrough">Request a walkthrough</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="wordmark" href="../"><svg class="brand-tile" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="var(--accent)"/><rect x="7" y="6.5" width="14" height="4.5" rx="1.5" fill="#fff"/><rect x="7" y="12.5" width="4.5" height="9" rx="1.5" fill="#fff"/><rect x="13" y="12.5" width="6.5" height="4" rx="1.5" fill="#fff"/></svg>Freehold</a>
+        <p>Managed private AI. Working applications, governed by your IT office, on your hardware, in your cloud, or through governed APIs. One SLA.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../platform/">Platform</a></li>
+          <li><a href="../applications/">Applications</a></li>
+          <li><a href="../governance/">Governance &amp; console</a></li>
+          <li><a href="../deployment/">Deployment postures</a></li>
+          <li><a href="../security/">Security &amp; sovereignty</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="../solutions/">Solutions</a></li>
+          <li><a href="../economics/">Economics</a></li>
+          <li><a href="../faq/">FAQ</a></li>
+          <li><a href="../pricing/">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../company/">About</a></li>
+          <li><a href="../company/#early-access">Early access</a></li>
+          <li><a href="mailto:hello@freeholdtech.ai">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© <span id="yr">2026</span> Freehold Technologies, Inc. · Delaware, USA</span>
+      <span><a href="mailto:hello@freeholdtech.ai">hello@freeholdtech.ai</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/site.js?v=3"></script>
+<div class="search-overlay" id="search-overlay" hidden>
+  <div class="search-panel"><div id="search-box"></div></div>
+</div>
+<script src="../assets/search.js?v=1" defer></script>
+</body>
+</html>
